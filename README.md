@@ -62,9 +62,9 @@ Check out the live website here:
 
 -Email: 24ranjith2003@gmail.com
 
--LinkedIn: https://www.linkedin.com/in/ranjith-ar/
+-LinkedIn: (https://www.linkedin.com/in/ranjith-ar/)  [ranjith-a-r]
 
--GitHub: https://github.com/ranjith-nayak
+-GitHub: (https://github.com/ranjith-nayak)  [ranjith-nayak]
 
 ## ⚖️ License & Rights
 
