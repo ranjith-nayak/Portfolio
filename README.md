@@ -57,16 +57,10 @@ Check out the live website here:
 
 -Easy to update and extend for future projects
 
-## 📬 Contact Me
--I’m open to opportunities, collaborations, and professional connections.
+## 📜 License
+This project is licensed under the **APACHE2.0 License**.
 
--Email: 24ranjith2003@gmail.com
-
--LinkedIn: (https://www.linkedin.com/in/ranjith-ar/)  [ranjith-a-r]
-
--GitHub: (https://github.com/ranjith-nayak)  [ranjith-nayak]
-
-## ⚖️ License & Rights
-
-© 2025 Ranjith A R. All rights reserved.
-This repository is for personal portfolio demonstration only. Do not copy or reuse without explicit permission.
+## 📬 Contact
+📧 Email: 24ranjith2003@gmail.com  
+🐙 GitHub: [ranjith-nayak](https://github.com/ranjith-nayak)  
+💼 LinkedIn: [Ranjith A R](https://www.linkedin.com/in/ranjith-a-r/)
