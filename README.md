@@ -58,7 +58,7 @@ Check out the live website here:
 -Easy to update and extend for future projects
 
 ## 📜 License
-This project is licensed under the **APACHE2.0 License**.
+This project is licensed under the **APACHE-2.0 License**.
 
 ## 📬 Contact
 📧 Email: 24ranjith2003@gmail.com  
