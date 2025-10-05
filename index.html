@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjith A R - Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#ff6347', // A red similar to the buttons in the image
+                        'dark-bg': '#2c3e50', // Dark background color
+                        'light-bg': '#f4f7f6', // Light background color for the about section
+                        'text-light': '#ecf0f1', // Light text color
+                        'card-bg-light': '#ffffff', // Card background for light sections
+                        'card-bg-dark': '#3a475a', // Card background for dark sections
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom font import for Inter (as per best practice) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Custom styles to match the image aesthetics */
+        .hero-bg {
+            background-color: #333333;
+            /* A slightly lighter dark gray for depth */
+        }
+
+        .nav-link:hover {
+            color: #ff6347;
+            /* Primary red on hover */
+            transition: color 0.3s ease;
+        }
+
+        .divider-dot::after {
+            content: ':';
+            margin-left: 0.5rem;
+            margin-right: 0.25rem;
+        }
+
+        /* Style for the service/portfolio cards */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* === HELLO FADER STYLES === */
+        .greeting-text {
+            /* Ensures smooth transition for opacity */
+            transition: opacity 500ms ease-in-out;
+            /* Ensures fixed space for the dynamic text to prevent layout shift */
+            min-height: 36px;
+            /* Matches the text-3xl height */
+            min-width: 180px;
+            /* Accommodates the widest language text */
+            display: block;
+            text-align: left;
+        }
+
+        /* Typing animation cursor effect for profession */
+        #typing-text {
+            border-right: 2px solid #ff6347;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #ff6347
+            }
+        }
+    </style>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="font-sans text-gray-800 scroll-smooth">
+
+    <!-- 1. Header/Navigation Section -->
+    <header class="hero-bg text-text-light p-4 shadow-lg fixed w-full z-20">
+        <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-primary-red">
+                RANJITH A R
+            </div>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-wide">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#blog" class="nav-link">Blog</a>
+                <a href="#contactme" class="nav-link">Contact Me</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-text-light" onclick="toggleMobileMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full hero-bg py-4 md:hidden">
+            <nav class="flex flex-col space-y-3 text-center text-lg uppercase tracking-wide">
+                <a href="#home" class="nav-link" onclick="toggleMobileMenu()">Home</a>
+                <a href="#about" class="nav-link" onclick="toggleMobileMenu()">About</a>
+                <a href="#skills" class="nav-link" onclick="toggleMobileMenu()">Skills</a>
+                <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projects</a>
+                <a href="#certifications" class="nav-link" onclick="toggleMobileMenu()">Certifications</a>
+                <a href="#blog" class="nav-link" onclick="toggleMobileMenu()">Blog</a>
+                <a href="#contactme" class="nav-link" onclick="toggleMobileMenu()">Contact Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section (UPDATED with Dynamic Greeting) -->
+        <section id="home" class="hero-bg min-h-screen pt-20 flex items-center justify-center relative overflow-hidden">
+            <div class="container mx-auto px-6 py-12 md:flex md:items-center">
+                <!-- Left Content -->
+                <div class="md:w-1/2 z-10 text-text-light space-y-4 lg:ml-20">
+
+                    <!-- DYNAMIC HELLO! LINE -->
+                    <p id="greeting"
+                        class="text-3xl font-medium uppercase tracking-widest text-primary-red greeting-text opacity-0">
+                        <!-- Content inserted by JS -->
+                    </p>
+
+                    <!-- Name & Profession - Adjusted Typography -->
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                        I Am <span class="text-primary-red">Ranjith A R</span>,
+                    </h1>
+
+                    <!-- "And I am a" - Smaller text -->
+                    <p class="text-3xl md:text-3xl font-semibold text-text-light/80">
+                        And I am a
+                    </p>
+
+                    <!-- Profession Typing Text - Large text, same as name -->
+                    <h2 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                        <span class="text-primary-red" id="typing-text"></span>
+                    </h2>
+
+                    <p class="text-lg text-text-light/75 max-w-md pt-4">
+                        I’m focused on learning to transform raw data into meaningful insights and impactful
+                        visualizations.
+                    </p>
+
+                    <!-- Social Media Links -->
+                    <div class="flex flex-wrap space-x-4 pt-6">
+                        <!-- GitHub -->
+                        <a href="https://github.com/ranjith-nayak" target="_blank" title="GitHub"
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/ranjith-a-r" target="_blank" title="LinkedIn"
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <!-- Gmail -->
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=24ranjith2003@gmail.com" target="_blank"
+                            title="Email"
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/reign_jeeth" target="_blank" title="Instagram"
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/reign_jeeth" target="_blank" title="X"
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            <i class="fab fa-x text-xl"></i>
+                        </a>
+                        <!-- Reddit -->
+                        <a href="https://www.reddit.com/u/reign_jeeth" target="_blank" title="Reddit"
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            <i class="fab fa-reddit-alien text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Image (Placeholder) -->
+                <div class="md:w-1/2 flex justify-center mt-12 md:mt-0 relative z-0">
+                    <img src="C:\Users\user\Pictures\Camera Roll\ranjithpfp2.jpg"
+                        alt="Professional Portrait"
+                        class="hidden md:block w-full max-w-lg h-auto rounded-xl object-cover transform translate-x-12 translate-y-12 shadow-2xl opacity-70"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x600/555555/ffffff?text=Image+Not+Found';" />
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. About Section -->
+        <section id="about" class="bg-light-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-12 items-center">
+
+                <!-- Left Image Block -->
+                <div class="lg:w-1/3 flex justify-center">
+                    <div class="relative w-80 h-96 md:w-96 md:h-[450px] bg-card-bg-light p-4 rounded-xl shadow-2xl">
+                        <img src="C:\Users\user\Pictures\Camera Roll\ranjithpfp1.jpg"
+                            alt="About Me Portrait" class="w-full h-full object-cover rounded-lg"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x1200/c7c7c7/ffffff?text=About+Image';" />
+                    </div>
+                </div>
+
+                <!-- Right Content Block -->
+                <div class="lg:w-2/3 space-y-6">
+                    <h3 class="text-4xl font-bold text-gray-900">
+                        I Am a <span class="text-primary-red">Dedicated Data Analyst</span>
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed max-w-3xl">
+                        Hello! I'm Ranjith A R, and my passion lies in solving complex problems through data. I am
+                        actively building my expertise in data cleaning, modeling, and storytelling to deliver
+                        actionable insights. I thrive on challenging projects that demand attention to detail and a
+                        commitment to data integrity.
+                    </p>
+
+                    <!-- Personal Details List -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg pt-4">
+                        <div class="flex">
+                            <span class="font-medium text-gray-900 w-32">Name <span class="divider-dot"></span></span>
+                            <span class="text-gray-600">Ranjith A R</span>
+                        </div>
+                        <div class="flex">
+                            <span class="font-medium text-gray-900 w-32">Age <span class="divider-dot"></span></span>
+                            <span class="text-gray-600">22</span>
+                        </div>
+                        <div class="flex">
+                            <span class="font-medium text-gray-900 w-32">Country <span
+                                    class="divider-dot"></span></span>
+                            <span class="text-gray-600">India </span>
+                        </div>
+                        <div class="flex">
+                            <span class="font-medium text-gray-900 w-32">Email <span class="divider-dot"></span></span>
+                            <span class="text-gray-600">24ranjith2003@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition duration-300 mt-6">
+                        Download CV
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Skills Section -->
+        <section id="skills" class="hero-bg py-20 md:py-32 text-text-light">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">My Expertise</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2">Core <span class="text-primary-red">Skills</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Skill Card 1: Data Analysis -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover">
+                        <i class="fas fa-chart-bar text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-3">Statistical Analysis</h4>
+                        <p class="text-text-light/75">Proficiency in statistical analysis, predictive modeling, and data
+                            cleaning techniques for accurate reporting.</p>
+                    </div>
+                    <!-- Skill Card 2: Data Visualization -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover">
+                        <i class="fas fa-tachometer-alt text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-3">Data Visualization</h4>
+                        <p class="text-text-light/75">Expertise in Tableau and PowerBI to create compelling, interactive
+                            dashboards and reports.</p>
+                    </div>
+                    <!-- Skill Card 3: Programming (Python/SQL) -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover">
+                        <i class="fas fa-database text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-3">SQL & Databases</h4>
+                        <p class="text-text-light/75">Expert-level SQL for querying large relational datasets and
+                            optimizing database performance.</p>
+                    </div>
+                    <!-- Skill Card 4: Web Development (Front-end) -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover">
+                        <i class="fas fa-code text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-3">Python/R Programming</h4>
+                        <p class="text-text-light/75">Strong foundation in Python and its libraries (Pandas, NumPy) for
+                            data manipulation and automation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Projects Section -->
+        <section id="projects" class="bg-light-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">My Work</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2 text-gray-900">Latest <span
+                            class="text-primary-red">Projects</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Item 1: Predictive Model -->
+                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/000000/ffffff?text=Predictive+Model" alt="Project 1"
+                            class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-primary-red font-medium mb-1">Data Science</p>
+                            <h4 class="text-xl font-semibold text-gray-900">Churn Rate Predictive Model</h4>
+                            <a href="#" class="text-primary-red hover:underline mt-2 inline-block">View Case Study
+                                &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Project Item 2: Dashboard -->
+                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/3498db/ffffff?text=Dashboard+Visualization"
+                            alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-primary-red font-medium mb-1">Data Visualization</p>
+                            <h4 class="text-xl font-semibold text-gray-900">Interactive Sales Performance Dashboard</h4>
+                            <a href="#" class="text-primary-red hover:underline mt-2 inline-block">View Dashboard
+                                &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Project Item 3: ETL Pipeline -->
+                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/2ecc71/ffffff?text=ETL+Process" alt="Project 3"
+                            class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-primary-red font-medium mb-1">Data Engineering</p>
+                            <h4 class="text-xl font-semibold text-gray-900">Automated ETL Process with Python</h4>
+                            <a href="#" class="text-primary-red hover:underline mt-2 inline-block">View Code &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Certifications Section (Replaced Resume) -->
+        <section id="certifications" class="hero-bg py-20 md:py-32 text-text-light">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">My Credentials</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2">Verified <span
+                            class="text-primary-red">Certifications</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Certification 1: Google Data Analytics -->
+                    <div class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/34495e/ffffff?text=Google+Data+Analytics"
+                            alt="Google Data Analytics Certificate"
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/34495e/ffffff?text=Cert+1';">
+                        <h4 class="text-xl font-semibold mb-2 text-primary-red">Google Data Analytics Professional
+                            Certificate</h4>
+                        <p class="text-text-light/75 text-sm">A comprehensive 8-course program covering the full data
+                            analysis lifecycle from cleaning to visualization.</p>
+                        <a href="#"
+                            class="text-sm font-medium text-text-light hover:text-primary-red mt-3 inline-block">View
+                            Credential &rarr;</a>
+                    </div>
+
+                    <!-- Certification 2: Tableau Specialist -->
+                    <div class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/9b59b6/ffffff?text=Tableau+Specialist"
+                            alt="Tableau Certified Specialist"
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/9b59b6/ffffff?text=Cert+2';">
+                        <h4 class="text-xl font-semibold mb-2 text-primary-red">Tableau Desktop Certified Associate</h4>
+                        <p class="text-text-light/75 text-sm">Demonstrated proficiency in connecting to data,
+                            calculations, mapping, and creating effective dashboards.</p>
+                        <a href="#"
+                            class="text-sm font-medium text-text-light hover:text-primary-red mt-3 inline-block">View
+                            Credential &rarr;</a>
+                    </div>
+
+                    <!-- Certification 3: Advanced SQL -->
+                    <div class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Advanced+SQL"
+                            alt="Advanced SQL Certificate" class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/2ecc71/ffffff?text=Cert+3';">
+                        <h4 class="text-xl font-semibold mb-2 text-primary-red">Advanced SQL Techniques</h4>
+                        <p class="text-text-light/75 text-sm">Mastered complex queries, stored procedures, and
+                            performance tuning for querying large databases.</p>
+                        <a href="#"
+                            class="text-sm font-medium text-text-light hover:text-primary-red mt-3 inline-block">View
+                            Credential &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Blog Section -->
+        <section id="blog" class="bg-light-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Latest News</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2 text-gray-900">My <span
+                            class="text-primary-red">Blog</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/9b59b6/ffffff?text=Python+Data" alt="Blog Post 1"
+                            class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">October 5, 2024 | Data Science</p>
+                            <h4
+                                class="text-xl font-semibold text-gray-900 hover:text-primary-red transition duration-300">
+                                Cleaning Messy Data with Pandas: A Quick Guide</h4>
+                            <p class="text-gray-600 mt-2 text-sm">Essential tips and tricks for data wrangling to ensure
+                                your analysis is accurate and efficient.</p>
+                        </div>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/3498db/ffffff?text=Tableau" alt="Blog Post 2"
+                            class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">September 28, 2024 | Visualization</p>
+                            <h4
+                                class="text-xl font-semibold text-gray-900 hover:text-primary-red transition duration-300">
+                                How to Choose the Right Chart for Your Data Story</h4>
+                            <p class="text-gray-600 mt-2 text-sm">A visual breakdown of when to use bar charts, scatter
+                                plots, and heatmaps.</p>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
+                        <img src="https://placehold.co/600x400/2ecc71/ffffff?text=SQL+Tips" alt="Blog Post 3"
+                            class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">September 15, 2024 | Databases</p>
+                            <h4
+                                class="text-xl font-semibold text-gray-900 hover:text-primary-red transition duration-300">
+                                5 Advanced SQL Techniques for Faster Queries</h4>
+                            <p class="text-gray-600 mt-2 text-sm">Optimizing your queries with window functions and
+                                indexing for improved performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Contact Me Section -->
+        <section id="contactme" class="hero-bg py-20 md:py-32 text-text-light">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Get In Touch</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                        Contact <span class="text-primary-red">Me</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Contact Form Column -->
+                    <div class="lg:col-span-3 bg-card-bg-dark p-8 rounded-xl shadow-xl max-w-4xl mx-auto">
+                        <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+
+                        <!-- ✅ Formspree form (replace 'your_form_id' with actual one) -->
+                        <form action="https://formspree.io/f/manpbbkq" method="POST" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
+                     focus:outline-none focus:ring-2 focus:ring-primary-red" required>
+
+                                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
+                     focus:outline-none focus:ring-2 focus:ring-primary-red" required>
+                            </div>
+
+                            <input type="text" name="subject" placeholder="Subject" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
+                   focus:outline-none focus:ring-2 focus:ring-primary-red" required>
+
+                            <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
+                   focus:outline-none focus:ring-2 focus:ring-primary-red" required></textarea>
+
+                            <button type="submit" class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg 
+                   hover:bg-red-600 transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+
+                        <!-- Optional success message -->
+                        <p class="text-sm text-gray-400 mt-4">You’ll receive a confirmation once your message is sent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 9. Footer (Simple Placeholder) -->
+        <footer class="hero-bg text-text-light p-6 text-center text-sm">
+            <p>&copy; 2025 Ranjith A R. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- 1. HELLO GREETING FADER SCRIPT ---
+        const greetings = [
+            { text: "HELLO!" },
+            { text: "ನಮಸ್ಕಾರ!" },   // Kannada (Namaskara)
+            { text: "¡HOLA!" },      // Spanish
+            { text: "BONJOUR!" },   // French
+            { text: "HALLO!" },     // German
+            { text: "नमस्ते!" },     // Hindi (Namaste)
+            { text: "こんにちは!" },  // Japanese (Konnichiwa)
+            { text: "你好!" },      // Chinese (Nǐ hǎo)
+            { text: "Ciao!" },       // Italian
+            { text: "Привет!" },     // Russian (Privet)
+            { text: "안녕하세요!" },   // Korean (Annyeonghaseyo)
+            { text: "مرحبا!" },     // Arabic (Marhaba)
+
+        ];
+
+        let currentGreetingIndex = 0;
+        const GREETING_DURATION_MS = 1500; // How long the greeting is fully visible
+        const FADE_DURATION_MS = 500;     // Matches the CSS transition time
+
+        const greetingEl = document.getElementById('greeting');
+
+        function fadeOutGreeting() {
+            greetingEl.classList.remove('opacity-100');
+            greetingEl.classList.add('opacity-0');
+        }
+
+        function showGreeting(index) {
+            if (!greetingEl) return;
+            const currentGreeting = greetings[index];
+
+            // 1. Set text
+            greetingEl.textContent = currentGreeting.text;
+
+            // 2. Fade In (opacity-0 to opacity-100)
+            setTimeout(() => {
+                greetingEl.classList.remove('opacity-0');
+                greetingEl.classList.add('opacity-100');
+
+                // 3. Schedule the Fade Out after the duration
+                setTimeout(() => {
+                    fadeOutGreeting();
+                }, GREETING_DURATION_MS);
+            }, 50);
+        }
+
+        function nextGreeting() {
+            if (!greetingEl) return;
+            // Wait for the fade-out transition to complete before changing text
+            setTimeout(() => {
+                currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
+                showGreeting(currentGreetingIndex);
+
+                // Schedule the next cycle start, this matches the total time for one cycle
+                setTimeout(nextGreeting, GREETING_DURATION_MS + FADE_DURATION_MS + 50);
+            }, FADE_DURATION_MS);
+        }
+        // --- END GREETING FADER SCRIPT ---
+
+
+        // --- 2. TYPING ANIMATION SCRIPT (Existing Logic) ---
+        const professions = ["Data Analyst.", "Business Analyst."];
+        const typingTextElement = document.getElementById('typing-text');
+
+        let professionIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 150;
+
+        function type() {
+            if (!typingTextElement) return;
+
+            const currentText = professions[professionIndex];
+            let display = currentText.substring(0, charIndex);
+
+            typingTextElement.textContent = display;
+
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length + 1) {
+                // Pause at the end of the word
+                isDeleting = true;
+                typingSpeed = 75; // Faster deleting speed
+                setTimeout(type, 1500); // Wait 1.5 seconds before starting deletion
+                return;
+            } else if (isDeleting && charIndex === -1) {
+                isDeleting = false;
+                professionIndex = (professionIndex + 1) % professions.length;
+                typingSpeed = 150; // Slower typing speed
+                setTimeout(type, 500); // Wait 0.5 seconds before starting next word
+                return;
+            }
+
+            setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
+        }
+        // --- End Typing Animation Script ---
+
+
+        // Simple JavaScript for interaction 
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Portfolio page loaded with all sections.");
+
+            // Start the typing animation once the DOM is ready
+            type();
+
+            // Start the greeting fader
+            showGreeting(currentGreetingIndex);
+            setTimeout(nextGreeting, GREETING_DURATION_MS + FADE_DURATION_MS + 50);
+
+            // Add scroll-to-section logic for smooth navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu on click
+                    if (window.innerWidth < 768) {
+                        const menu = document.getElementById('mobile-menu');
+                        if (!menu.classList.contains('hidden')) {
+                            menu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
