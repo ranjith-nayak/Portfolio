@@ -1,4 +1,4 @@
-# 🌟 Ranjith A R | Personal Portfolio
+# 🌟 My Personal Portfolio
 
 Welcome to my **Personal Portfolio Repository**!
 This website showcases my skills, projects, and journey as an aspiring **Data Analyst**. It serves as a professional hub to explore my work, experience, and ways to connect with me.
