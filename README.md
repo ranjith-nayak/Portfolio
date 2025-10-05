@@ -40,9 +40,7 @@ Portfolio/
 
 └── README.md # Project documentation
 
-## 🚀 Live Demo
-Check out the live website here:  
-[https://ranjith-nayak.github.io/Portfolio/](https://ranjith-nayak.github.io/Portfolio/index.html)
+
 
 ---
 ## 🔹 Features
