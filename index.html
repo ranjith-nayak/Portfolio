@@ -132,7 +132,6 @@
                     <!-- DYNAMIC HELLO! LINE -->
                     <p id="greeting"
                         class="text-3xl font-medium uppercase tracking-widest text-primary-red greeting-text opacity-0">
-                        <!-- Content inserted by JS -->
                     </p>
 
                     <!-- Name & Profession -->
@@ -140,7 +139,7 @@
                         I Am <span class="text-primary-red">Ranjith A R</span>,
                     </h1>
 
-                    <!-- "And I am a" - Smaller text -->
+                    <!-- "And I am a" -->
                     <p class="text-3xl md:text-3xl font-semibold text-text-light/80">
                         and I am an aspiring <span class="text-primary-red">
                     </p>
@@ -156,33 +155,27 @@
 
                     <!-- Social Media Links -->
                     <div class="flex flex-wrap space-x-4 pt-6">
-                        <!-- GitHub -->
                         <a href="https://github.com/ranjith-nayak" target="_blank" title="GitHub"
                             class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <!-- LinkedIn -->
                         <a href="https://www.linkedin.com/in/ranjith-a-r" target="_blank" title="LinkedIn"
                             class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
-                        <!-- Gmail -->
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=24ranjith2003@gmail.com" target="_blank"
                             title="Email"
                             class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fas fa-envelope text-xl"></i>
                         </a>
-                        <!-- Instagram -->
                         <a href="https://instagram.com/reign_jeeth" target="_blank" title="Instagram"
                             class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
-                        <!-- X (Twitter) -->
                         <a href="https://x.com/reign_jeeth" target="_blank" title="X"
                             class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-x text-xl"></i>
                         </a>
-                        <!-- Reddit -->
                         <a href="https://www.reddit.com/u/reign_jeeth" target="_blank" title="Reddit"
                             class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-reddit-alien text-xl"></i>
@@ -246,12 +239,11 @@
                         </div>
                     </div>
 
-                    <button
-                        class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition duration-300 mt-6">
-                        <a href="https://github.com/ranjith-nayak/Portfolio/raw/main/Ranjith%20A%20R%20resume.pdf" download="Ranjith_AR_Resume.pdf">
-                            Download CV
-                        </a>
-                    </button>
+                    <a href="https://github.com/ranjith-nayak/Portfolio/raw/main/Ranjith%20A%20R%20resume.pdf" 
+                        download="Ranjith_AR_Resume.pdf"
+                        class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition duration-300 mt-6 inline-block">
+                        Download CV
+                    </a>
                 </div>
 
             </div>
@@ -322,7 +314,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Item 1 -->
                     <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
                         <img src="https://placehold.co/600x400/000000/ffffff?text=Blinkit+Dashboard" alt="Project 1"
                             class="w-full h-48 object-cover">
@@ -332,7 +323,6 @@
                             <a href="#" class="text-primary-red hover:underline mt-2 inline-block">View Dashboard</a>
                         </div>
                     </div>
-                    <!-- Project Item 2 -->
                     <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
                         <img src="https://placehold.co/600x400/3498db/ffffff?text=Sales+Dashboard" alt="Project 2"
                             class="w-full h-48 object-cover">
@@ -343,7 +333,6 @@
                                 &rarr;</a>
                         </div>
                     </div>
-                    <!-- Project Item 3 -->
                     <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
                         <img src="https://placehold.co/600x400/2ecc71/ffffff?text=ETL+Pipeline" alt="Project 3"
                             class="w-full h-48 object-cover">
@@ -547,35 +536,26 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <!-- Contact Form Column -->
                     <div class="lg:col-span-3 bg-card-bg-dark p-8 rounded-xl shadow-xl max-w-4xl mx-auto">
                         <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
 
-                        <!-- Formspree form -->
                         <form action="https://formspree.io/f/manpbbkq" method="POST" class="space-y-4">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
-                     focus:outline-none focus:ring-2 focus:ring-primary-red" required>
+                                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-primary-red" required>
 
-                                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
-                     focus:outline-none focus:ring-2 focus:ring-primary-red" required>
+                                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-primary-red" required>
                             </div>
 
-                            <input type="text" name="subject" placeholder="Subject" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
-                   focus:outline-none focus:ring-2 focus:ring-primary-red" required>
+                            <input type="text" name="subject" placeholder="Subject" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-primary-red" required>
 
-                            <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
-                   focus:outline-none focus:ring-2 focus:ring-primary-red" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-primary-red" required></textarea>
 
-                            <button type="submit" class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg 
-                   hover:bg-red-600 transition duration-300">
+                            <button type="submit" class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
                                 Send Message
                             </button>
                         </form>
 
-                        <!-- Optional success message -->
-                        <p class="text-sm text-gray-400 mt-4">You'll receive a confirmation once your message is sent.
-                        </p>
+                        <p class="text-sm text-gray-400 mt-4">You'll receive a confirmation once your message is sent.</p>
                     </div>
                 </div>
             </div>
@@ -594,7 +574,6 @@
             menu.classList.toggle('hidden');
         }
 
-        // --- HELLO GREETING FADER SCRIPT ---
         const greetings = [
             { text: "HELLO!" },
             { text: "ನಮಸ್ಕಾರ!" },
@@ -647,7 +626,6 @@
             }, FADE_DURATION_MS);
         }
 
-        // --- TYPING ANIMATION SCRIPT ---
         const professions = ["Data Analyst.", "Business Analyst."];
         const typingTextElement = document.getElementById('typing-text');
 
@@ -686,7 +664,6 @@
             setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
         }
 
-        // DOM Content Loaded
         document.addEventListener('DOMContentLoaded', () => {
             console.log("Portfolio page loaded with all sections.");
 
