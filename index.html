@@ -12,12 +12,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-red': '#ff6347', // A red similar to the buttons in the image
-                        'dark-bg': '#2c3e50', // Dark background color
-                        'light-bg': '#f4f7f6', // Light background color for the about section
-                        'text-light': '#ecf0f1', // Light text color
-                        'card-bg-light': '#ffffff', // Card background for light sections
-                        'card-bg-dark': '#3a475a', // Card background for dark sections
+                        'primary-red': '#ff6347',
+                        'dark-bg': '#2c3e50',
+                        'light-bg': '#f4f7f6',
+                        'text-light': '#ecf0f1',
+                        'card-bg-light': '#ffffff',
+                        'card-bg-dark': '#3a475a',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -27,18 +27,14 @@
         }
     </script>
     <style>
-        /* Custom font import for Inter (as per best practice) */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-        /* Custom styles to match the image aesthetics */
         .hero-bg {
             background-color: #333333;
-            /* A slightly lighter dark gray for depth */
         }
 
         .nav-link:hover {
             color: #ff6347;
-            /* Primary red on hover */
             transition: color 0.3s ease;
         }
 
@@ -48,7 +44,6 @@
             margin-right: 0.25rem;
         }
 
-        /* Style for the service/portfolio cards */
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -58,28 +53,20 @@
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* === HELLO FADER STYLES === */
         .greeting-text {
-            /* Ensures smooth transition for opacity */
             transition: opacity 500ms ease-in-out;
-            /* Ensures fixed space for the dynamic text to prevent layout shift */
             min-height: 36px;
-            /* Matches the text-3xl height */
             min-width: 180px;
-            /* Accommodates the widest language text */
             display: block;
             text-align: left;
         }
 
-        /* Typing animation cursor effect for profession */
         #typing-text {
             border-right: 2px solid #ff6347;
             animation: blink-caret 0.75s step-end infinite;
         }
 
-        /* The typewriter cursor effect */
         @keyframes blink-caret {
-
             from,
             to {
                 border-color: transparent
@@ -90,7 +77,6 @@
             }
         }
     </style>
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -137,7 +123,7 @@
     </header>
 
     <main>
-        <!-- 2. Hero Section (UPDATED with Dynamic Greeting) -->
+        <!-- 2. Hero Section -->
         <section id="home" class="hero-bg min-h-screen pt-20 flex items-center justify-center relative overflow-hidden">
             <div class="container mx-auto px-6 py-12 md:flex md:items-center">
                 <!-- Left Content -->
@@ -149,7 +135,7 @@
                         <!-- Content inserted by JS -->
                     </p>
 
-                    <!-- Name & Profession - Adjusted Typography -->
+                    <!-- Name & Profession -->
                     <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
                         I Am <span class="text-primary-red">Ranjith A R</span>,
                     </h1>
@@ -159,7 +145,7 @@
                         and I am an aspiring <span class="text-primary-red">
                     </p>
 
-                    <!-- Profession Typing Text - Large text, same as name -->
+                    <!-- Profession Typing Text -->
                     <h2 class="text-5xl md:text-6xl font-extrabold leading-tight">
                         <span class="text-primary-red" id="typing-text"></span>
                     </h2>
@@ -172,45 +158,43 @@
                     <div class="flex flex-wrap space-x-4 pt-6">
                         <!-- GitHub -->
                         <a href="https://github.com/ranjith-nayak" target="_blank" title="GitHub"
-                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-github text-xl"></i>
                         </a>
                         <!-- LinkedIn -->
                         <a href="https://www.linkedin.com/in/ranjith-a-r" target="_blank" title="LinkedIn"
-                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
                         <!-- Gmail -->
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=24ranjith2003@gmail.com" target="_blank"
                             title="Email"
-                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fas fa-envelope text-xl"></i>
-                        </a>
-
                         </a>
                         <!-- Instagram -->
                         <a href="https://instagram.com/reign_jeeth" target="_blank" title="Instagram"
-                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
                         <!-- X (Twitter) -->
                         <a href="https://x.com/reign_jeeth" target="_blank" title="X"
-                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-x text-xl"></i>
                         </a>
                         <!-- Reddit -->
                         <a href="https://www.reddit.com/u/reign_jeeth" target="_blank" title="Reddit"
-                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red shadow-lg">
+                            class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-primary-red">
                             <i class="fab fa-reddit-alien text-xl"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Right Image (Placeholder) -->
+                <!-- Right Image -->
                 <div class="md:w-1/2 flex justify-center mt-12 md:mt-0 relative z-0">
-                    <img src="C:\Users\user\Pictures\Camera Roll\ranjithpfp2.jpg" alt="Professional Portrait"
-                        class="hidden md:block w-full max-w-lg h-auto rounded-xl object-cover transform translate-x-12 translate-y-12 shadow-2xl opacity-70"
-                        onerror="this.onerror=null;this.src='https://placehold.co/400x600/555555/ffffff?text=Image+Not+Found';" />
+                    <img src="https://placehold.co/400x600/555555/ffffff?text=Ranjith+Portrait"
+                        alt="Professional Portrait"
+                        class="hidden md:block w-full max-w-lg h-auto rounded-xl object-cover transform translate-x-12 translate-y-12 shadow-2xl opacity-70" />
                 </div>
 
             </div>
@@ -223,9 +207,9 @@
                 <!-- Left Image Block -->
                 <div class="lg:w-1/3 flex justify-center">
                     <div class="relative w-80 h-96 md:w-96 md:h-[450px] bg-card-bg-light p-4 rounded-xl shadow-2xl">
-                        <img src="C:\Users\user\Pictures\Camera Roll\ranjithpfp1.jpg" alt="About Me Portrait"
-                            class="w-full h-full object-cover rounded-lg"
-                            onerror="this.onerror=null;this.src='https://placehold.co/800x1200/c7c7c7/ffffff?text=About+Image';" />
+                        <img src="https://placehold.co/400x500/c7c7c7/ffffff?text=About+Image"
+                            alt="About Me Portrait"
+                            class="w-full h-full object-cover rounded-lg" />
                     </div>
                 </div>
 
@@ -264,7 +248,7 @@
 
                     <button
                         class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition duration-300 mt-6">
-                        <a href="C:\Users\user\Desktop\p portfolio\Ranjith A R resume.pdf" download>
+                        <a href="https://github.com/ranjith-nayak/Portfolio/raw/main/Ranjith%20A%20R%20resume.pdf" download="Ranjith_AR_Resume.pdf">
                             Download CV
                         </a>
                     </button>
@@ -338,9 +322,9 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Item 1: Predictive Model -->
+                    <!-- Project Item 1 -->
                     <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
-                        <img src="https://placehold.co/600x400/000000/ffffff?text=Predictive+Model" alt="Project 1"
+                        <img src="https://placehold.co/600x400/000000/ffffff?text=Blinkit+Dashboard" alt="Project 1"
                             class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-sm text-primary-red font-medium mb-1">MS Excel</p>
@@ -348,10 +332,10 @@
                             <a href="#" class="text-primary-red hover:underline mt-2 inline-block">View Dashboard</a>
                         </div>
                     </div>
-                    <!-- Project Item 2: Dashboard -->
+                    <!-- Project Item 2 -->
                     <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
-                        <img src="https://placehold.co/600x400/3498db/ffffff?text=Dashboard+Visualization"
-                            alt="Project 2" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/600x400/3498db/ffffff?text=Sales+Dashboard" alt="Project 2"
+                            class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-sm text-primary-red font-medium mb-1">Data Visualization</p>
                             <h4 class="text-xl font-semibold text-gray-900">Interactive Sales Performance Dashboard</h4>
@@ -359,9 +343,9 @@
                                 &rarr;</a>
                         </div>
                     </div>
-                    <!-- Project Item 3: ETL Pipeline -->
+                    <!-- Project Item 3 -->
                     <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
-                        <img src="https://placehold.co/600x400/2ecc71/ffffff?text=ETL+Process" alt="Project 3"
+                        <img src="https://placehold.co/600x400/2ecc71/ffffff?text=ETL+Pipeline" alt="Project 3"
                             class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-sm text-primary-red font-medium mb-1">Data Engineering</p>
@@ -373,8 +357,6 @@
             </div>
         </section>
 
-
-        <!-- 6. Certifications Section -->
         <!-- 6. Certifications Section -->
         <section id="certifications" class="hero-bg py-20 md:py-32 text-text-light">
 
@@ -393,51 +375,61 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- NPTEL -->
-                    <div onclick="openPreview('images/NPTEL.jpeg')"
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/NPTEL.jpeg')"
                         class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
-                        <img src="images/NPTEL.jpeg" class="w-full h-48 object-cover rounded-lg mb-4 opacity-80">
+                        <img src="https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/NPTEL.jpeg" 
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80" 
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=NPTEL+Certificate';">
                         <h4 class="text-xl font-semibold text-primary-red">The Joy of Computing Using Python</h4>
                         <p class="text-sm text-text-light/75">Issued by NPTEL</p>
                     </div>
 
                     <!-- META -->
-                    <div onclick="openPreview('images/CourseraMETA1.jpeg')"
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/CourseraMETA1.jpeg')"
                         class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
-                        <img src="images/CourseraMETA1.jpeg"
-                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80">
+                        <img src="https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/CourseraMETA1.jpeg"
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=META+Certificate';">
                         <h4 class="text-xl font-semibold text-primary-red">Introduction to Data Analytics</h4>
                         <p class="text-sm text-text-light/75">Issued by Meta</p>
                     </div>
 
                     <!-- GOOGLE -->
-                    <div onclick="openPreview('images/CourseraGOOGLE1.jpeg')"
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/CourseraGOOGLE1.jpeg')"
                         class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
-                        <img src="images/CourseraGOOGLE1.jpeg"
-                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80">
+                        <img src="https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/CourseraGOOGLE1.jpeg"
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=GOOGLE+Certificate';">
                         <h4 class="text-xl font-semibold text-primary-red">Foundations: Data, Data, Everywhere</h4>
                         <p class="text-sm text-text-light/75">Issued by Google</p>
                     </div>
 
                     <!-- IBM -->
-                    <div onclick="openPreview('images/CourseraIBM1.jpeg')"
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/CourseraIBM1.jpeg')"
                         class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
-                        <img src="images/CourseraIBM1.jpeg" class="w-full h-48 object-cover rounded-lg mb-4 opacity-80">
+                        <img src="https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/CourseraIBM1.jpeg" 
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=IBM+Certificate';">
                         <h4 class="text-xl font-semibold text-primary-red">Introduction to Data Analytics</h4>
                         <p class="text-sm text-text-light/75">Issued by IBM</p>
                     </div>
 
                     <!-- MICROSOFT -->
-                    <div onclick="openPreview('images/CertificateOfCompletion_CareerEssentialsinDataAnalysisbyMicrosoftandLinkedIn.jpeg')"
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/CertificateOfCompletion_CareerEssentialsinDataAnalysisbyMicrosoftandLinkedIn.jpeg')"
                         class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
-                        <img src="images/CertificateOfCompletion_CareerEssentialsinDataAnalysisbyMicrosoftandLinkedIn.jpeg" class="w-full h-48 object-cover rounded-lg mb-4 opacity-80">
+                        <img src="https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/CertificateOfCompletion_CareerEssentialsinDataAnalysisbyMicrosoftandLinkedIn.jpeg" 
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=MICROSOFT+Certificate';">
                         <h4 class="text-xl font-semibold text-primary-red">Career Essentials in Data Analysis</h4>
                         <p class="text-sm text-text-light/75">Microsoft & LinkedIn</p>
                     </div>
 
                     <!-- IBM PYTHON -->
-                    <div onclick="openPreview('images/IBMDesign20251223-33-th7huk.jpeg')"
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/IBMDesign20251223-33-th7huk.jpeg')"
                         class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
-                        <img src="images/IBMDesign20251223-33-th7huk.jpeg" class="w-full h-48 object-cover rounded-lg mb-4 opacity-80">
+                        <img src="https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/images/IBMDesign20251223-33-th7huk.jpeg" 
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=IBM+PYTHON+Certificate';">
                         <h4 class="text-xl font-semibold text-primary-red">Data Analysis Using Python</h4>
                         <p class="text-sm text-text-light/75">Issued by IBM</p>
                     </div>
@@ -490,6 +482,7 @@
                 document.body.style.overflow = 'auto';
             }
         </script>
+
         <!-- 7. Blog Section -->
         <section id="blog" class="bg-light-bg py-20 md:py-32">
             <div class="container mx-auto px-6 md:px-12">
@@ -558,7 +551,7 @@
                     <div class="lg:col-span-3 bg-card-bg-dark p-8 rounded-xl shadow-xl max-w-4xl mx-auto">
                         <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
 
-                        <!-- ✅ Formspree form (replace 'your_form_id' with actual one) -->
+                        <!-- Formspree form -->
                         <form action="https://formspree.io/f/manpbbkq" method="POST" class="space-y-4">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light 
@@ -581,15 +574,14 @@
                         </form>
 
                         <!-- Optional success message -->
-                        <p class="text-sm text-gray-400 mt-4">You’ll receive a confirmation once your message is sent.
+                        <p class="text-sm text-gray-400 mt-4">You'll receive a confirmation once your message is sent.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- 9. Footer (Simple Placeholder) -->
+        <!-- 9. Footer -->
         <footer class="hero-bg text-text-light p-6 text-center text-sm">
             <p>&copy; 2026 Ranjith A R. All rights reserved.</p>
         </footer>
@@ -602,26 +594,25 @@
             menu.classList.toggle('hidden');
         }
 
-        // --- 1. HELLO GREETING FADER SCRIPT ---
+        // --- HELLO GREETING FADER SCRIPT ---
         const greetings = [
             { text: "HELLO!" },
-            { text: "ನಮಸ್ಕಾರ!" },   // Kannada (Namaskara)
-            { text: "¡HOLA!" },      // Spanish
-            { text: "BONJOUR!" },   // French
-            { text: "HALLO!" },     // German
-            { text: "नमस्ते!" },     // Hindi (Namaste)
-            { text: "こんにちは!" },  // Japanese (Konnichiwa)
-            { text: "你好!" },      // Chinese (Nǐ hǎo)
-            { text: "Ciao!" },       // Italian
-            { text: "Привет!" },     // Russian (Privet)
-            { text: "안녕하세요!" },   // Korean (Annyeonghaseyo)
-            { text: "مرحبا!" },     // Arabic (Marhaba)
-
+            { text: "ನಮಸ್ಕಾರ!" },
+            { text: "¡HOLA!" },
+            { text: "BONJOUR!" },
+            { text: "HALLO!" },
+            { text: "नमस्ते!" },
+            { text: "こんにちは!" },
+            { text: "你好!" },
+            { text: "Ciao!" },
+            { text: "Привет!" },
+            { text: "안녕하세요!" },
+            { text: "مرحبا!" },
         ];
 
         let currentGreetingIndex = 0;
-        const GREETING_DURATION_MS = 1500; // How long the greeting is fully visible
-        const FADE_DURATION_MS = 500;     // Matches the CSS transition time
+        const GREETING_DURATION_MS = 1500;
+        const FADE_DURATION_MS = 500;
 
         const greetingEl = document.getElementById('greeting');
 
@@ -634,15 +625,12 @@
             if (!greetingEl) return;
             const currentGreeting = greetings[index];
 
-            // 1. Set text
             greetingEl.textContent = currentGreeting.text;
 
-            // 2. Fade In (opacity-0 to opacity-100)
             setTimeout(() => {
                 greetingEl.classList.remove('opacity-0');
                 greetingEl.classList.add('opacity-100');
 
-                // 3. Schedule the Fade Out after the duration
                 setTimeout(() => {
                     fadeOutGreeting();
                 }, GREETING_DURATION_MS);
@@ -651,18 +639,15 @@
 
         function nextGreeting() {
             if (!greetingEl) return;
-            // Wait for the fade-out transition to complete before changing text
             setTimeout(() => {
                 currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
                 showGreeting(currentGreetingIndex);
 
-                // Schedule the next cycle start, this matches the total time for one cycle
                 setTimeout(nextGreeting, GREETING_DURATION_MS + FADE_DURATION_MS + 50);
             }, FADE_DURATION_MS);
         }
-        // --- END GREETING FADER SCRIPT ---
 
-        // --- 2. TYPING ANIMATION SCRIPT (Existing Logic) ---
+        // --- TYPING ANIMATION SCRIPT ---
         const professions = ["Data Analyst.", "Business Analyst."];
         const typingTextElement = document.getElementById('typing-text');
 
@@ -686,50 +671,46 @@
             }
 
             if (!isDeleting && charIndex === currentText.length + 1) {
-                // Pause at the end of the word
                 isDeleting = true;
-                typingSpeed = 75; // Faster deleting speed
-                setTimeout(type, 1500); // Wait 1.5 seconds before starting deletion
+                typingSpeed = 75;
+                setTimeout(type, 1500);
                 return;
             } else if (isDeleting && charIndex === -1) {
                 isDeleting = false;
                 professionIndex = (professionIndex + 1) % professions.length;
-                typingSpeed = 150; // Slower typing speed
-                setTimeout(type, 500); // Wait 0.5 seconds before starting next word
+                typingSpeed = 150;
+                setTimeout(type, 500);
                 return;
             }
 
             setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
         }
-        // --- End Typing Animation Script ---
 
-
-        // Simple JavaScript for interaction
+        // DOM Content Loaded
         document.addEventListener('DOMContentLoaded', () => {
             console.log("Portfolio page loaded with all sections.");
 
-            // Start the typing animation once the DOM is ready
             type();
 
-            // Start the greeting fader
             showGreeting(currentGreetingIndex);
             setTimeout(nextGreeting, GREETING_DURATION_MS + FADE_DURATION_MS + 50);
 
-            // Add scroll-to-section logic for smooth navigation
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
-                    // Close mobile menu on click
                     if (window.innerWidth < 768) {
-                        const menu = document.getElementById('mobile-menu'); if
-                            (!menu.classList.contains('hidden')) { menu.classList.add('hidden'); }
+                        const menu = document.getElementById('mobile-menu');
+                        if (!menu.classList.contains('hidden')) {
+                            menu.classList.add('hidden');
+                        }
                     }
                 });
             });
-        }); </script>
+        });
+    </script>
 </body>
 
 </html>
