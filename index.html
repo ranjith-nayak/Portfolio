@@ -210,28 +210,28 @@
                         <!-- Social Media Links -->
                         <div class="flex flex-wrap space-x-4 pt-4">
                             <a href="https://github.com/ranjith-nayak" target="_blank" title="GitHub"
-                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-500">
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
                             <a href="https://www.linkedin.com/in/ranjith-a-r" target="_blank" title="LinkedIn"
-                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-500">
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
                                 <i class="fab fa-linkedin-in text-xl"></i>
                             </a>
                             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=24ranjith2003@gmail.com"
                                 target="_blank" title="Email"
-                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-500">
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
                                 <i class="fas fa-envelope text-xl"></i>
                             </a>
                             <a href="https://instagram.com/reign_jeeth" target="_blank" title="Instagram"
-                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-500">
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
                                 <i class="fab fa-instagram text-xl"></i>
                             </a>
                             <a href="https://x.com/reign_jeeth" target="_blank" title="X"
-                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-500">
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
                                 <i class="fab fa-twitter text-xl"></i>
                             </a>
                             <a href="https://www.reddit.com/u/reign_jeeth" target="_blank" title="Reddit"
-                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-500">
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
                                 <i class="fab fa-reddit-alien text-xl"></i>
                             </a>
                         </div>
@@ -239,7 +239,7 @@
 
                     <!-- Right Image (Circular) -->
                     <div class="md:w-1/2 flex justify-center mt-12 md:mt-0 relative z-0">
-                        <img src="assests/ranjithpfp1.jpg" alt="Professional Portrait" class="circular-image" />
+                        <img src="assests/ranjithpfp1.jpg" alt="Professional Portrait" class="circular-image" onerror="this.src='https://placehold.co/340x340/333333/ff6347?text=Ranjith+A+R'" />
                     </div>
                 </div>
             </div>
@@ -262,11 +262,11 @@
                     <!-- Justified Text Content -->
                     <div class="max-w-5xl mx-auto space-y-6">
                         <p class="text-lg text-gray-600 leading-relaxed justified-text">
-                            Data Analyst with hands-on experience in SQL, Python, Power BI, Tableau, and Excel. Passionate about transforming raw data into actionable insights through data cleaning, exploratory data analysis, dashboard development, and business intelligence reporting.
+                            Data Analyst with hands-on experience in SQL, Python, Power BI, Tableau, and Excel. Passionate about transforming raw data into actionable insights through data cleaning, exploratory data analysis, and advanced statistical methods.
                         </p>
 
                         <p class="text-lg text-gray-600 leading-relaxed justified-text">
-                            Built end-to-end analytics projects across customer behavior, elections, banking, HR, retail, and global layoffs datasets. Experienced in developing interactive dashboards, performing predictive analytics, and delivering data-driven recommendations that support business decision-making.
+                            Built end-to-end analytics projects across customer behavior, elections, banking, HR, retail, and global layoffs datasets. Experienced in developing interactive dashboards, creating complex SQL queries, and building machine learning models to solve real-world business challenges.
                         </p>
                     </div>
 
@@ -999,46 +999,30 @@
                 charIndex++;
             }
 
-            if (!isDeleting && charIndex === currentText.length + 1) {
+            if (!isDeleting && charIndex === currentText.length) {
                 isDeleting = true;
-                typingSpeed = 75;
-                setTimeout(type, 1500);
-                return;
-            } else if (isDeleting && charIndex === -1) {
+                typingSpeed = 100;
+            } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 professionIndex = (professionIndex + 1) % professions.length;
                 typingSpeed = 150;
-                setTimeout(type, 500);
-                return;
             }
 
-            setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
+            setTimeout(type, typingSpeed);
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("Professional portfolio initialized successfully.");
+        window.addEventListener('load', () => {
+            if (greetingEl) {
+                showGreeting(0);
+                setTimeout(nextGreeting, GREETING_DURATION_MS + FADE_DURATION_MS + 50);
+            }
 
-            type();
-
-            showGreeting(currentGreetingIndex);
-            setTimeout(nextGreeting, GREETING_DURATION_MS + FADE_DURATION_MS + 50);
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    if (window.innerWidth < 768) {
-                        const menu = document.getElementById('mobile-menu');
-                        if (!menu.classList.contains('hidden')) {
-                            menu.classList.add('hidden');
-                        }
-                    }
-                });
-            });
+            if (typingTextElement) {
+                type();
+            }
         });
     </script>
+
 </body>
 
 </html>
