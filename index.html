@@ -76,6 +76,28 @@
                 border-color: #ff6347
             }
         }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 99, 71, 0.1);
+            border-radius: 0.5rem;
+            border-left: 4px solid #ff6347;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ff6347;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(236, 240, 241, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -96,7 +118,7 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#certifications" class="nav-link">Certifications</a>
-                <a href="#blog" class="nav-link">Blog</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
                 <a href="#contactme" class="nav-link">Contact Me</a>
             </nav>
             <!-- Mobile Menu Button -->
@@ -116,7 +138,7 @@
                 <a href="#skills" class="nav-link" onclick="toggleMobileMenu()">Skills</a>
                 <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projects</a>
                 <a href="#certifications" class="nav-link" onclick="toggleMobileMenu()">Certifications</a>
-                <a href="#blog" class="nav-link" onclick="toggleMobileMenu()">Blog</a>
+                <a href="#achievements" class="nav-link" onclick="toggleMobileMenu()">Achievements</a>
                 <a href="#contactme" class="nav-link" onclick="toggleMobileMenu()">Contact Me</a>
             </nav>
         </div>
@@ -150,8 +172,24 @@
                     </h2>
 
                     <p class="text-lg text-text-light/75 max-w-md pt-4">
-                        Uncovering patterns, delivering insights, creating impact.
+                        Transforming raw data into actionable insights. Building end-to-end analytics solutions with SQL, Python, Power BI & Excel.
                     </p>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-4 py-6 border-y border-gray-600">
+                        <div class="stat-box">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Analytics Projects</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Dashboards Built</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                    </div>
 
                     <!-- Social Media Links -->
                     <div class="flex flex-wrap space-x-4 pt-6">
@@ -184,7 +222,6 @@
                 </div>
 
                 <!-- Right Image -->
-                <!-- ✅ FIX: Changed assets/ → assests/ -->
                 <div class="md:w-1/2 flex justify-center mt-12 md:mt-0 relative z-0">
                     <img src="assests/ranjithpfp2.jpg"
                         alt="Professional Portrait"
@@ -201,7 +238,6 @@
                 <!-- Left Image Block -->
                 <div class="lg:w-1/3 flex justify-center">
                     <div class="relative w-80 h-96 md:w-96 md:h-[450px] bg-card-bg-light p-4 rounded-xl shadow-2xl">
-                        <!-- ✅ FIX: Changed assets/ → assests/ -->
                         <img src="assests/ranjithpfp1.jpg"
                             alt="About Me Portrait"
                             class="w-full h-full object-cover rounded-lg" />
@@ -211,13 +247,10 @@
                 <!-- Right Content Block -->
                 <div class="lg:w-2/3 space-y-6">
                     <h3 class="text-4xl font-bold text-gray-900">
-                        I Am a <span class="text-primary-red">Fresher Data Analyst.</span>
+                        I Am a <span class="text-primary-red">Data Analyst.</span>
                     </h3>
                     <p class="text-gray-600 leading-relaxed max-w-3xl">
-                        Hello! I'm Ranjith A R, and my passion lies in solving complex problems through data. I am
-                        actively building my expertise in data cleaning, modeling, and storytelling to deliver
-                        actionable insights. I thrive on challenging projects that demand attention to detail and a
-                        commitment to data integrity.
+                        Data Analyst focused on transforming raw datasets into actionable business insights through SQL, Python, Excel, and Power BI. Experienced in building end-to-end analytics projects involving data cleaning, modeling, visualization, KPI tracking, and business reporting. I thrive on challenging projects that demand attention to detail and a commitment to data integrity.
                     </p>
 
                     <!-- Personal Details List -->
@@ -241,7 +274,6 @@
                         </div>
                     </div>
 
-                    <!-- ✅ FIX: Changed assets/ → assests/ -->
                     <a href="assests/Ranjith A R resume.pdf"
                         download="Ranjith_AR_Resume.pdf"
                         class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition duration-300 mt-6 inline-block">
@@ -266,9 +298,10 @@
                     <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
                         <i class="fas fa-chart-line text-4xl text-primary-red mb-4"></i>
                         <h4 class="text-xl font-bold mb-3 text-white">Data Visualization</h4>
-                        <ul class="text-text-light/75 space-y-2">
+                        <ul class="text-text-light/75 space-y-2 text-sm">
                             <li>• Power BI (DAX, Modeling)</li>
                             <li>• Tableau Desktop</li>
+                            <li>• Dashboard Design</li>
                             <li>• MS Excel (Advanced/VBA)</li>
                         </ul>
                     </div>
@@ -276,30 +309,33 @@
                     <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
                         <i class="fas fa-database text-4xl text-primary-red mb-4"></i>
                         <h4 class="text-xl font-bold mb-3 text-white">Technical Skills</h4>
-                        <ul class="text-text-light/75 space-y-2">
+                        <ul class="text-text-light/75 space-y-2 text-sm">
                             <li>• SQL (MySQL)</li>
                             <li>• Python (Pandas, NumPy)</li>
+                            <li>• Data Cleaning & EDA</li>
                             <li>• R Programming</li>
                         </ul>
                     </div>
 
                     <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
                         <i class="fas fa-tools text-4xl text-primary-red mb-4"></i>
-                        <h4 class="text-xl font-bold mb-3 text-white">Design & Version</h4>
-                        <ul class="text-text-light/75 space-y-2">
+                        <h4 class="text-xl font-bold mb-3 text-white">Tools & Version Control</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
                             <li>• Figma (UI/UX Design)</li>
                             <li>• GitHub / Git</li>
+                            <li>• Power Query</li>
                             <li>• Jupyter Notebooks</li>
                         </ul>
                     </div>
 
                     <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
-                        <i class="fas fa-users text-4xl text-primary-red mb-4"></i>
-                        <h4 class="text-xl font-bold mb-3 text-white">Professional Skills</h4>
-                        <ul class="text-text-light/75 space-y-2">
-                            <li>• Statistical Modeling</li>
+                        <i class="fas fa-brain text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Analytics & Business</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Data Modeling</li>
                             <li>• Data Storytelling</li>
-                            <li>• Critical Thinking</li>
+                            <li>• Statistical Analysis</li>
+                            <li>• Business Insights</li>
                         </ul>
                     </div>
 
@@ -307,134 +343,143 @@
             </div>
         </section>
 
-<!-- 5. Projects Section -->
+        <!-- 5. Projects Section -->
+        <section id="projects" class="bg-light-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 md:px-12">
+                <!-- Heading -->
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">My Work</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2 text-gray-900">
+                        Featured <span class="text-primary-red">Projects</span>
+                    </h2>
+                </div>
 
-<section id="projects" class="bg-gray-50 py-20 md:py-32">
-    <div class="container mx-auto px-6 md:px-12">
+                <!-- Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-```
-    <!-- Heading -->
-    <div class="text-center mb-16">
-        <p class="text-red-500 uppercase tracking-widest text-sm font-semibold">
-            My Work
-        </p>
-        <h2 class="text-4xl md:text-5xl font-bold mt-2 text-gray-900">
-            Featured <span class="text-red-500">Projects</span>
-        </h2>
-    </div>
+                    <!-- Global Layoffs -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 p-6 flex items-center justify-center">
+                            <i class="fas fa-globe text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                                🌍 Global Layoffs Analytics
+                            </h4>
+                            <p class="text-sm text-primary-red font-medium mb-3">
+                                SQL • Python • Power BI • Excel
+                            </p>
+                            <div class="space-y-2 mb-4 text-sm">
+                                <p><strong>Problem:</strong> Analyze worldwide layoffs trends post-pandemic</p>
+                                <p><strong>Solution:</strong> Built interactive Power BI dashboard tracking 10K+ layoff records across industries</p>
+                                <p><strong>Insights:</strong> Identified top affected sectors, regional patterns, hiring recovery rates</p>
+                            </div>
+                            <a href="https://github.com/ranjith-nayak/global-layoffs-analysis" target="_blank"
+                                class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                                View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
 
-    <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- FIFA Dashboard -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gradient-to-br from-green-600 to-green-800 p-6 flex items-center justify-center">
+                            <i class="fas fa-trophy text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                                ⚽ FIFA World Cup Analytics
+                            </h4>
+                            <p class="text-sm text-primary-red font-medium mb-3">
+                                Power BI • SQL • Excel
+                            </p>
+                            <div class="space-y-2 mb-4 text-sm">
+                                <p><strong>Problem:</strong> Explore World Cup historical performance data</p>
+                                <p><strong>Solution:</strong> Created dynamic Power BI dashboard with 75+ years of tournament data</p>
+                                <p><strong>Insights:</strong> Team rankings, goal patterns, tournament win prediction models</p>
+                            </div>
+                            <a href="https://github.com/ranjith-nayak/fifa-world-cup-powerbi-dashboard" target="_blank"
+                                class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                                View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
 
-        <!-- Global Layoffs -->
-        <a href="https://github.com/ranjith-nayak/global-layoffs-analysis" target="_blank"
-            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6 block">
+                    <!-- HR Dashboard -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800 p-6 flex items-center justify-center">
+                            <i class="fas fa-users text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                                📊 HR Analytics Dashboard
+                            </h4>
+                            <p class="text-sm text-primary-red font-medium mb-3">
+                                Power BI • SQL • Excel
+                            </p>
+                            <div class="space-y-2 mb-4 text-sm">
+                                <p><strong>Problem:</strong> Track employee attrition & retention factors</p>
+                                <p><strong>Solution:</strong> Developed comprehensive HR dashboard analyzing 1500+ employee records</p>
+                                <p><strong>Insights:</strong> Attrition triggers, department trends, salary benchmarking</p>
+                            </div>
+                            <a href="https://github.com/ranjith-nayak/hr-analytics-dashboard" target="_blank"
+                                class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                                View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
 
-            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                🌍 Global Layoffs Analytics
-            </h4>
+                    <!-- Blinkit Dashboard -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gradient-to-br from-orange-600 to-orange-800 p-6 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                                🛒 Blinkit Sales Dashboard
+                            </h4>
+                            <p class="text-sm text-primary-red font-medium mb-3">
+                                Excel • Power BI
+                            </p>
+                            <div class="space-y-2 mb-4 text-sm">
+                                <p><strong>Problem:</strong> Monitor e-grocery sales performance across outlets</p>
+                                <p><strong>Solution:</strong> Built multi-dimensional Excel/Power BI dashboard tracking 100+ products</p>
+                                <p><strong>Insights:</strong> Top-selling categories, outlet ROI, seasonal trends</p>
+                            </div>
+                            <a href="https://github.com/ranjith-nayak/Blinkit-Grocery-Sales-Analysis" target="_blank"
+                                class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                                View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
 
-            <p class="text-sm text-red-500 font-medium mt-2">
-                SQL • Python • Power BI • Excel
-            </p>
+                    <!-- Bank Analytics -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gradient-to-br from-indigo-600 to-indigo-800 p-6 flex items-center justify-center">
+                            <i class="fas fa-university text-6xl text-white opacity-20"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                                🏦 Bank Analytics Dashboard
+                            </h4>
+                            <p class="text-sm text-primary-red font-medium mb-3">
+                                SQL • Power BI • Excel
+                            </p>
+                            <div class="space-y-2 mb-4 text-sm">
+                                <p><strong>Problem:</strong> Analyze customer banking behavior & risk</p>
+                                <p><strong>Solution:</strong> Created segmentation dashboard with SQL queries & Power BI visualization</p>
+                                <p><strong>Insights:</strong> Customer lifetime value, loan default prediction, revenue optimization</p>
+                            </div>
+                            <a href="https://github.com/ranjith-nayak/bank_analytics" target="_blank"
+                                class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                                View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
 
-            <p class="text-gray-600 text-sm mt-3">
-                Analyzed worldwide layoffs data to uncover industry trends, economic impact, workforce reductions, and post-pandemic hiring patterns.
-            </p>
-
-            <span class="text-red-500 mt-4 inline-block font-medium">
-                View Project →
-            </span>
-        </a>
-
-        <!-- FIFA Dashboard -->
-        <a href="https://github.com/ranjith-nayak/fifa-world-cup-powerbi-dashboard" target="_blank"
-            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6 block">
-
-            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                ⚽ FIFA World Cup Analytics
-            </h4>
-
-            <p class="text-sm text-red-500 font-medium mt-2">
-                Power BI • SQL • Excel
-            </p>
-
-            <p class="text-gray-600 text-sm mt-3">
-                Interactive analytics dashboard exploring FIFA World Cup history, team performances, rankings, goals, and tournament insights.
-            </p>
-
-            <span class="text-red-500 mt-4 inline-block font-medium">
-                View Project →
-            </span>
-        </a>
-
-        <!-- HR Dashboard -->
-        <a href="https://github.com/ranjith-nayak/hr-analytics-dashboard" target="_blank"
-            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6 block">
-
-            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                📊 HR Analytics Dashboard
-            </h4>
-
-            <p class="text-sm text-red-500 font-medium mt-2">
-                Power BI • SQL • Excel
-            </p>
-
-            <p class="text-gray-600 text-sm mt-3">
-                Employee attrition analysis, workforce insights, KPI tracking, and HR reporting dashboards using Power BI.
-            </p>
-
-            <span class="text-red-500 mt-4 inline-block font-medium">
-                View on GitHub →
-            </span>
-        </a>
-
-        <!-- Blinkit Dashboard -->
-        <a href="https://github.com/ranjith-nayak/Blinkit-Grocery-Sales-Analysis" target="_blank"
-            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6 block">
-
-            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                🛒 Blinkit Sales Dashboard
-            </h4>
-
-            <p class="text-sm text-red-500 font-medium mt-2">
-                Excel • Power BI
-            </p>
-
-            <p class="text-gray-600 text-sm mt-3">
-                Sales trends, outlet performance, product insights, and customer behavior analysis using interactive dashboards.
-            </p>
-
-            <span class="text-red-500 mt-4 inline-block font-medium">
-                View on GitHub →
-            </span>
-        </a>
-
-        <!-- Bank Analytics -->
-        <a href="https://github.com/ranjith-nayak/bank_analytics" target="_blank"
-            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6 block">
-
-            <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                🏦 Bank Analytics Dashboard
-            </h4>
-
-            <p class="text-sm text-red-500 font-medium mt-2">
-                SQL • Power BI • Excel
-            </p>
-
-            <p class="text-gray-600 text-sm mt-3">
-                Customer segmentation, loan analysis, transaction insights, and banking KPI visualization using analytics tools.
-            </p>
-
-            <span class="text-red-500 mt-4 inline-block font-medium">
-                View Project →
-            </span>
-        </a>
-
-    </div>
-</div>
-
-</section>
+                </div>
+            </div>
+        </section>
 
 
         <!-- 6. Certifications Section -->
@@ -452,7 +497,6 @@
                 </div>
 
                 <!-- Grid -->
-                <!-- ✅ FIX: All onclick URLs and src paths changed from assets/ → assests/ -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- NPTEL -->
@@ -564,54 +608,68 @@
             }
         </script>
 
-        <!-- 7. Blog Section -->
-        <section id="blog" class="bg-light-bg py-20 md:py-32">
+        <!-- 7. Achievements Section (REPLACES FAKE BLOG) -->
+        <section id="achievements" class="bg-light-bg py-20 md:py-32">
             <div class="container mx-auto px-6 md:px-12">
                 <div class="text-center mb-16">
-                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Latest News</p>
-                    <h2 class="text-4xl md:text-5xl font-bold mt-2 text-gray-900">My <span
-                            class="text-primary-red">Blog</span></h2>
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Track Record</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2 text-gray-900">Key <span
+                            class="text-primary-red">Achievements</span></h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Blog Post 1 -->
-                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
-                        <img src="https://placehold.co/600x400/9b59b6/ffffff?text=Python+Data" alt="Blog Post 1"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <p class="text-sm text-gray-500 mb-2">October 5, 2024 | Data Science</p>
-                            <h4
-                                class="text-xl font-semibold text-gray-900 hover:text-primary-red transition duration-300">
-                                Cleaning Messy Data with Pandas: A Quick Guide</h4>
-                            <p class="text-gray-600 mt-2 text-sm">Essential tips and tricks for data wrangling to ensure
-                                your analysis is accurate and efficient.</p>
+                    <!-- Achievement 1 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-chart-pie text-4xl text-primary-red"></i>
                         </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">5+ Analytics Projects Completed</h4>
+                        <p class="text-gray-600">Delivered end-to-end analytics solutions from data cleaning to interactive dashboards, impacting business decisions.</p>
                     </div>
-                    <!-- Blog Post 2 -->
-                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
-                        <img src="https://placehold.co/600x400/3498db/ffffff?text=Tableau" alt="Blog Post 2"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <p class="text-sm text-gray-500 mb-2">September 28, 2024 | Visualization</p>
-                            <h4
-                                class="text-xl font-semibold text-gray-900 hover:text-primary-red transition duration-300">
-                                How to Choose the Right Chart for Your Data Story</h4>
-                            <p class="text-gray-600 mt-2 text-sm">A visual breakdown of when to use bar charts, scatter
-                                plots, and heatmaps.</p>
+
+                    <!-- Achievement 2 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-database text-4xl text-primary-red"></i>
                         </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">10+ Dashboards Built</h4>
+                        <p class="text-gray-600">Created interactive Power BI & Tableau dashboards with complex DAX calculations and real-time data insights.</p>
                     </div>
-                    <!-- Blog Post 3 -->
-                    <div class="bg-card-bg-light rounded-xl overflow-hidden shadow-xl card-hover">
-                        <img src="https://placehold.co/600x400/2ecc71/ffffff?text=SQL+Tips" alt="Blog Post 3"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <p class="text-sm text-gray-500 mb-2">September 15, 2024 | Databases</p>
-                            <h4
-                                class="text-xl font-semibold text-gray-900 hover:text-primary-red transition duration-300">
-                                5 Advanced SQL Techniques for Faster Queries</h4>
-                            <p class="text-gray-600 mt-2 text-sm">Optimizing your queries with window functions and
-                                indexing for improved performance.</p>
+
+                    <!-- Achievement 3 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-certificate text-4xl text-primary-red"></i>
                         </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">6 Professional Certifications</h4>
+                        <p class="text-gray-600">Completed certifications from Google, Meta, IBM, Microsoft & NPTEL in data analytics and Python programming.</p>
+                    </div>
+
+                    <!-- Achievement 4 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-code-branch text-4xl text-primary-red"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">GitHub Contributions</h4>
+                        <p class="text-gray-600">Open-source portfolio showcasing SQL queries, Python scripts, Power BI models, and complete analytics projects.</p>
+                    </div>
+
+                    <!-- Achievement 5 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-brain text-4xl text-primary-red"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">Technical Proficiency</h4>
+                        <p class="text-gray-600">Expert in SQL, Python (Pandas/NumPy), Power BI, Excel VBA, and statistical analysis for real-world datasets.</p>
+                    </div>
+
+                    <!-- Achievement 6 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-handshake text-4xl text-primary-red"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">Ready for Opportunities</h4>
+                        <p class="text-gray-600">Actively seeking Data Analyst positions where I can contribute data-driven insights and drive business value.</p>
                     </div>
                 </div>
             </div>
