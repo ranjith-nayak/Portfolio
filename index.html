@@ -2,298 +2,1108 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ranjith A R — Data & Insights | Portfolio</title>
-
-  <!-- Tailwind config before CDN so custom theme applies -->
-  <script>
-    tailwind = window.tailwind || {};
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'primary-red': '#ff6347',
-            'dark-bg': '#0f1724',
-            'card-bg-dark': '#101827',
-            'card-bg-light': '#ffffff',
-            'muted': '#94a3b8'
-          },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjith A R - Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#ff6347',
+                        'dark-bg': '#2c3e50',
+                        'light-bg': '#f4f7f6',
+                        'text-light': '#ecf0f1',
+                        'card-bg-light': '#ffffff',
+                        'card-bg-dark': '#3a475a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
         }
-      }
-    };
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-  <!-- SEO / Social -->
-  <meta name="description" content="Ranjith A R — Data Analyst. Analytics, BI, ML & Data Engineering. Explore projects, dashboards, and certifications.">
-  <meta property="og:title" content="Ranjith A R — Data & Insights" />
-  <meta property="og:description" content="Data Analyst portfolio: Power BI, SQL, Python, forecasting, ML projects." />
-  <meta property="og:image" content="/assets/og-preview.png" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+        .hero-bg {
+            background-color: #333333;
+        }
 
-  <!-- JSON-LD (Person) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Ranjith A R",
-    "url":"https://github.com/ranjith-nayak/Portfolio",
-    "sameAs":["https://github.com/ranjith-nayak","https://www.linkedin.com/in/ranjith-a-r"],
-    "jobTitle":"Data Analyst",
-    "worksFor":{"@type":"Organization","name":"Independent"}
-  }
-  </script>
+        .nav-link:hover {
+            color: #ff6347;
+            transition: color 0.3s ease;
+        }
 
-  <!-- Fonts + icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        .divider-dot::after {
+            content: ':';
+            margin-left: 0.5rem;
+            margin-right: 0.25rem;
+        }
 
-  <style>
-    :root{--accent:#ff6347}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    /* Animated blob background */
-    .blob {position:absolute;filter:blur(40px);opacity:.25;mix-blend-mode:screen}
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    /* subtle card focus highlight */
-    .card:focus{outline:2px solid rgba(255,99,71,0.25);outline-offset:4px}
+        .greeting-text {
+            transition: opacity 500ms ease-in-out;
+            min-height: 36px;
+            min-width: 180px;
+            display: block;
+            text-align: left;
+        }
 
-    /* small utility for visually-hidden */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  </style>
+        #typing-text {
+            border-right: 2px solid #ff6347;
+            animation: blink-caret 0.75s step-end infinite;
+        }
 
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #ff6347
+            }
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 99, 71, 0.1);
+            border-radius: 0.5rem;
+            border-left: 4px solid #ff6347;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ff6347;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(236, 240, 241, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .circular-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 4px solid #ff6347;
+        }
+
+        @media (min-width: 768px) {
+            .circular-image {
+                width: 340px;
+                height: 340px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="bg-dark-bg text-gray-100 leading-relaxed">
+<body class="font-sans text-gray-800 scroll-smooth">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 bg-black/40 backdrop-blur-sm border-b border-black/20">
-    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3 text-white no-underline" aria-label="Home">
-        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="48" height="48" rx="8" fill="#ff6347"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-weight="700" font-family="Inter, sans-serif" font-size="18" fill="#fff">RA</text></svg>
-        <span class="font-semibold">Ranjith A R</span>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
-        <a class="text-sm hover:text-primary-red" href="#about">About</a>
-        <a class="text-sm hover:text-primary-red" href="#projects">Projects</a>
-        <a class="text-sm hover:text-primary-red" href="#certifications">Certifications</a>
-        <a class="text-sm hover:text-primary-red" href="#contactme">Contact</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <a href="https://github.com/ranjith-nayak" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2 rounded-md hover:bg-white/5"><i class="fab fa-github"></i></a>
-        <a href="#contactme" class="hidden md:inline-block bg-primary-red text-white px-4 py-2 rounded-md hover:opacity-95">Hire Me</a>
-        <button id="mobile-toggle" class="md:hidden p-2" aria-label="Open menu"> <i class="fas fa-bars"></i></button>
-      </div>
-    </div>
-  </header>
-
-  <main class="relative overflow-hidden">
-    <!-- blob decorations -->
-    <div class="blob" aria-hidden="true" style="width:420px;height:420px;left:-10%;top:-5%;background:linear-gradient(135deg,#ff7a5a,#6ee7b7);border-radius:45% 55% 50% 50%;transform:translateZ(0);animation:move1 10s ease-in-out infinite;"></div>
-    <div class="blob" aria-hidden="true" style="width:360px;height:360px;right:-8%;bottom:-8%;background:linear-gradient(135deg,#4fd1c5,#a78bfa);border-radius:50% 40% 60% 50%;transform:translateZ(0);animation:move2 12s ease-in-out infinite;"></div>
-
-    <section id="home" class="max-w-6xl mx-auto px-6 py-24 relative">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div class="space-y-6 z-10">
-          <p class="text-sm uppercase tracking-widest text-primary-red font-semibold">Data • Insights • Impact</p>
-          <h1 class="text-4xl md:text-5xl font-extrabold">I build intelligent data products that drive decisions</h1>
-          <p class="text-muted text-gray-300 max-w-xl">I'm Ranjith — a data analyst & BI developer focused on turning complex datasets into clear business outcomes using SQL, Python, Power BI and forecasting techniques.</p>
-
-          <div class="flex gap-4">
-            <a href="#projects" class="inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-md shadow hover:scale-[.99]">Explore Projects <i class="fas fa-arrow-right text-sm"></i></a>
-            <a href="#contactme" class="inline-flex items-center gap-2 border border-white/10 px-4 py-2 rounded-md">Contact</a>
-          </div>
-
-          <div class="flex gap-4 mt-6">
-            <div class="bg-white/5 p-4 rounded-lg">
-              <div class="text-2xl font-bold text-primary-red">7+</div>
-              <div class="text-sm text-gray-400">Analytics Projects</div>
+    <!-- 1. Header/Navigation Section -->
+    <header class="hero-bg text-text-light p-4 shadow-lg fixed w-full z-20">
+        <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-primary-red">
+                RANJITH A R
             </div>
-            <div class="bg-white/5 p-4 rounded-lg">
-              <div class="text-2xl font-bold text-primary-red">10+</div>
-              <div class="text-sm text-gray-400">Dashboards</div>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-wide">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#contactme" class="nav-link">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-text-light" onclick="toggleMobileMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full hero-bg py-4 md:hidden">
+            <nav class="flex flex-col space-y-3 text-center text-lg uppercase tracking-wide">
+                <a href="#home" class="nav-link" onclick="toggleMobileMenu()">Home</a>
+                <a href="#about" class="nav-link" onclick="toggleMobileMenu()">About</a>
+                <a href="#skills" class="nav-link" onclick="toggleMobileMenu()">Skills</a>
+                <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projects</a>
+                <a href="#certifications" class="nav-link" onclick="toggleMobileMenu()">Certifications</a>
+                <a href="#achievements" class="nav-link" onclick="toggleMobileMenu()">Achievements</a>
+                <a href="#contactme" class="nav-link" onclick="toggleMobileMenu()">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section id="home"
+            class="hero-bg pt-32 pb-16 md:pb-20 flex items-center justify-center relative overflow-hidden">
+            <div class="container mx-auto px-6 py-8 md:py-12">
+                <div class="md:flex md:items-center md:gap-12">
+                    <!-- Left Content -->
+                    <div class="md:w-1/2 z-10 text-text-light space-y-4">
+
+                        <!-- DYNAMIC HELLO! LINE -->
+                        <p id="greeting"
+                            class="text-3xl font-medium uppercase tracking-widest text-primary-red greeting-text opacity-0">
+                        </p>
+
+                        <!-- Name & Profession -->
+                        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                            I Am <span class="text-primary-red">Ranjith A R</span>
+                        </h1>
+
+                        <!-- Profession Introduction -->
+                        <p class="text-2xl md:text-3xl font-semibold text-text-light/80">
+                            and I am a <span class="text-primary-red" id="typing-text"></span>
+                        </p>
+
+                        <p class="text-lg text-text-light/75 max-w-md pt-2">
+                            Building intelligent data solutions by combining analytics, engineering, 
+                            and AI to transform complex data into actionable business insights and 
+                            scalable decision-making systems.
+                        </p>
+
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-4 py-6 border-y border-gray-600">
+                            <div class="stat-box">
+                                <div class="stat-number">7+</div>
+                                <div class="stat-label">Analytics Projects</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Dashboards Created</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">6+</div>
+                                <div class="stat-label">Certifications</div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="flex flex-wrap space-x-4 pt-4">
+                            <a href="https://github.com/ranjith-nayak" target="_blank" title="GitHub"
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ranjith-a-r" target="_blank" title="LinkedIn"
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=24ranjith2003@gmail.com"
+                                target="_blank" title="Email"
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                            <a href="https://instagram.com/reign_jeeth" target="_blank" title="Instagram"
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://x.com/reign_jeeth" target="_blank" title="X"
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="https://www.reddit.com/u/reign_jeeth" target="_blank" title="Reddit"
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-card-bg-dark hover:bg-primary-red transition duration-300 text-text-light hover:text-white border border-gray-600">
+                                <i class="fab fa-reddit-alien text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Image (Circular) -->
+                    <div class="md:w-1/2 flex justify-center mt-12 md:mt-0 relative z-0">
+                        <img src="assests/ranjithpfp1.jpg" alt="Professional Portrait" class="circular-image"
+                            onerror="this.src='https://placehold.co/340x340/333333/ff6347?text=Ranjith+A+R'" />
+                    </div>
+                </div>
             </div>
-            <div class="bg-white/5 p-4 rounded-lg">
-              <div class="text-2xl font-bold text-primary-red">6+</div>
-              <div class="text-sm text-gray-400">Certifications</div>
+        </section>
+
+        <!-- 3. About Section -->
+        <section id="about" class="bg-light-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="space-y-6 max-w-6xl mx-auto">
+                    <!-- Centered Heading -->
+                    <div class="text-center mb-12">
+                        <p class="text-primary-red uppercase tracking-[4px] font-semibold text-sm mb-3">
+                            Get to Know Me
+                        </p>
+                        <h3 class="text-5xl font-bold text-gray-900 mb-4">
+                            About <span class="text-primary-red">Me</span>
+                        </h3>
+                    </div>
+
+                    <!-- Justified Text Content -->
+                    <div class="max-w-5xl mx-auto space-y-6">
+                        <p class="text-lg text-gray-600 leading-relaxed justified-text">
+                            Data Analyst with hands-on experience in SQL, Python, Power BI, Tableau, and Excel.
+                            Passionate about transforming raw data into actionable insights through data cleaning,
+                            exploratory data analysis, and advanced statistical methods.
+                        </p>
+
+                        <p class="text-lg text-gray-600 leading-relaxed justified-text">
+                            Built end-to-end analytics projects across customer behavior, elections, banking, HR,
+                            retail, and global layoffs datasets. Experienced in developing interactive dashboards,
+                            creating complex SQL queries, and building machine learning models to solve real-world
+                            business challenges.
+                        </p>
+                    </div>
+
+                    <!-- Personal Details List -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg pt-8 border-t border-gray-300">
+                        <div class="flex">
+                            <span class="font-semibold text-gray-900 w-40">Full Name <span
+                                    class="divider-dot"></span></span>
+                            <span class="text-gray-600">Ranjith A R</span>
+                        </div>
+                        <div class="flex">
+                            <span class="font-semibold text-gray-900 w-40">Email Address <span
+                                    class="divider-dot"></span></span>
+                            <span class="text-gray-600">24ranjith2003@gmail.com</span>
+                        </div>
+                        <div class="flex">
+                            <span class="font-semibold text-gray-900 w-40">GitHub <span
+                                    class="divider-dot"></span></span>
+                            <a href="https://github.com/ranjith-nayak" target="_blank"
+                                class="text-primary-red hover:underline">
+                                View Profile
+                            </a>
+                        </div>
+
+                        <div class="flex">
+                            <span class="font-semibold text-gray-900 w-40">LinkedIn <span
+                                    class="divider-dot"></span></span>
+                            <a href="https://www.linkedin.com/in/ranjith-a-r" target="_blank"
+                                class="text-primary-red hover:underline">
+                                View Profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Centered Download Button -->
+                    <div class="flex justify-center pt-8">
+                        <a href="assests/Ranjith A R resume.pdf" download="Ranjith_AR_Resume.pdf"
+                            class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
+                            Download Resume
+                        </a>
+                    </div>
+
+                </div>
             </div>
-          </div>
+        </section>
+
+        <!-- 4. Skills Section -->
+        <section id="skills" class="hero-bg py-20 md:py-32 text-text-light">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Professional
+                        Competencies</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2">Core <span class="text-primary-red">Skills</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Data Analytics -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-chart-line text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Data Analytics</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Data Analysis & Interpretation</li>
+                            <li>• Business Analytics</li>
+                            <li>• Statistical Analysis</li>
+                            <li>• Data-Driven Insights</li>
+                        </ul>
+                    </div>
+
+                    <!-- Database & SQL -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-database text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Database & SQL</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• SQL Query Development</li>
+                            <li>• MySQL Database Management</li>
+                            <li>• Data Modeling</li>
+                            <li>• Data Transformation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Python & Programming -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-code text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Python & Programming</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Python Development</li>
+                            <li>• Pandas & NumPy Libraries</li>
+                            <li>• Data Cleaning & Preparation</li>
+                            <li>• Exploratory Data Analysis (EDA)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Visualization -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-chart-bar text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Data Visualization</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Microsoft Power BI</li>
+                            <li>• DAX & Power Query</li>
+                            <li>• Dashboard Development</li>
+                            <li>• Interactive Reporting</li>
+                        </ul>
+                    </div>
+
+                    <!-- Business Intelligence -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-briefcase text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Business Intelligence</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Business Intelligence (BI)</li>
+                            <li>• KPI Reporting & Tracking</li>
+                            <li>• Data Storytelling</li>
+                            <li>• Business Reporting</li>
+                        </ul>
+                    </div>
+
+                    <!-- Machine Learning -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-brain text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Machine Learning </h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Machine Learning Algorithms</li>
+                            <li>• Scikit-Learn Framework</li>
+                            <li>• Predictive Analytics</li>
+                            <li>• Feature Engineering</li>
+                        </ul>
+                    </div>
+
+                    <!-- Forecasting & Operations Analytics -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-truck text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Forecasting & Operations Analytics</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Demand Forecasting</li>
+                            <li>• Supply Chain Analytics</li>
+                            <li>• Inventory Optimization</li>
+                            <li>• Operational KPI Tracking</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Engineering & ETL -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-cogs text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Data Engineering & ETL</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• ETL Workflow Development</li>
+                            <li>• Data Pipeline Design</li>
+                            <li>• Data Validation</li>
+                            <li>• Data Quality Management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Microsoft Excel -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-table text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Microsoft Excel</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Advanced Excel Functions</li>
+                            <li>• Pivot Tables & Charts</li>
+                            <li>• Data Cleaning & Preparation</li>
+                            <li>• Reporting & Analysis</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Technologies -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-tools text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Tools & Technologies</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Git & GitHub Version Control</li>
+                            <li>• Jupyter Notebook</li>
+                            <li>• Visual Studio Code</li>
+                            <li>• REST API Integration</li>
+                        </ul>
+                    </div>
+
+                    <!-- Advanced Concepts -->
+                    <div class="bg-card-bg-dark p-8 rounded-xl card-hover border-b-4 border-primary-red">
+                        <i class="fas fa-graduation-cap text-4xl text-primary-red mb-4"></i>
+                        <h4 class="text-xl font-bold mb-3 text-white">Advanced Analytics</h4>
+                        <ul class="text-text-light/75 space-y-2 text-sm">
+                            <li>• Statistical Modeling</li>
+                            <li>• Trend Analysis</li>
+                            <li>• Root Cause Analysis</li>
+                            <li>• Forecasting Techniques</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Projects Section -->
+
+        <!-- Heading -->
+        <div class="text-center mb-16">
+            <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Professional Portfolio
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2 text-gray-900">
+                Featured <span class="text-primary-red">Projects</span>
+            </h2>
         </div>
 
-        <div class="relative flex justify-center md:justify-end">
-          <img src="/assets/ranjithpfp1.jpg" alt="Ranjith A R" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary-red shadow-2xl" loading="lazy" />
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- SUPPLYSCOPE -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div
+                    class="h-48 bg-gradient-to-br from-emerald-600 to-emerald-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-truck-loading text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        SUPPLYSCOPE
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        Python • SQL • Power BI • Forecasting
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Develop a supply chain intelligence platform to monitor inventory
+                            performance, supplier reliability, logistics efficiency, and demand trends.</p>
+                        <p><strong>Implementation:</strong> Engineered a complete analytics solution involving SQL data
+                            modeling, Python-based analysis, KPI development, forecasting techniques, and executive
+                            Power BI dashboards.</p>
+                        <p><strong>Outcomes:</strong> Enabled inventory optimization, stockout risk reduction, supplier
+                            performance evaluation, and data-driven operational planning.</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/SUPPLYSCOPE-Supply-Chain-Intelligence" target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- JOBTELLECT -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="h-48 bg-gradient-to-br from-cyan-600 to-cyan-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-briefcase text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        JOBTELLECT
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        Python • SQL • Power BI • Data Analytics
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Analyze job market trends, skill demand, salary benchmarks, and
+                            hiring patterns across industries and locations.</p>
+                        <p><strong>Implementation:</strong> Built an end-to-end analytics workflow using Python, SQL,
+                            and Power BI to collect, transform, analyze, and visualize workforce intelligence data.</p>
+                        <p><strong>Outcomes:</strong> Identified in-demand skills, salary insights, hiring hotspots, and
+                            emerging career opportunities through interactive dashboards.</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/JOBTELLECT-Job-Market-Intelligence-Analytics"
+                        target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Customer Churn Prediction -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="h-48 bg-gradient-to-br from-red-600 to-red-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-chart-bar text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        Customer Churn Prediction
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        Python • Scikit-Learn • Pandas • NumPy
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Develop machine learning system to identify customers at
+                            risk of attrition</p>
+                        <p><strong>Implementation:</strong> Conducted comprehensive exploratory data analysis,
+                            feature engineering, and model development with predictive accuracy optimization</p>
+                        <p><strong>Outcomes:</strong> Generated actionable retention strategies and business
+                            recommendations based on model predictions</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/customer-churn-prediction" target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tamil Nadu Election Analysis -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="h-48 bg-gradient-to-br from-orange-600 to-orange-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-poll text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        Tamil Nadu Election Analysis
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        SQL • Power BI • Data Analysis
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Comprehensive analysis of electoral voting patterns and
+                            trends</p>
+                        <p><strong>Implementation:</strong> End-to-end analytics pipeline utilizing SQL queries
+                            and interactive Power BI dashboards</p>
+                        <p><strong>Outcomes:</strong> Party performance metrics, constituency analysis, and
+                            regional voting pattern insights</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/tamil-nadu-election-analysis" target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Global Layoffs Analytics -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-globe text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        Global Layoffs Analytics
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        SQL • Python • Power BI • Excel
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Analyze global workforce reduction trends in
+                            post-pandemic economy</p>
+                        <p><strong>Implementation:</strong> Developed interactive Power BI dashboard analyzing
+                            10,000+ layoff records across multiple dimensions</p>
+                        <p><strong>Outcomes:</strong> Identified affected industry sectors, regional impact
+                            patterns, and workforce recovery trajectories</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/global-layoffs-analysis" target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bank Analytics Dashboard -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="h-48 bg-gradient-to-br from-indigo-600 to-indigo-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-university text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        Bank Analytics Dashboard
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        SQL • Power BI • Excel
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Monitor customer behavior patterns and key financial
+                            performance indicators</p>
+                        <p><strong>Implementation:</strong> Created comprehensive customer segmentation
+                            dashboard utilizing SQL database queries and advanced business intelligence
+                            visualization</p>
+                        <p><strong>Outcomes:</strong> Customer lifetime value optimization, loan default
+                            prediction, and revenue enhancement opportunities</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/bank_analytics" target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- HR Analytics Dashboard -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-users text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        Human Resources Analytics
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        Power BI • Excel • HR Analytics
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Analyze employee attrition patterns and retention factors
+                        </p>
+                        <p><strong>Implementation:</strong> Developed comprehensive analytical dashboard
+                            processing 1,500+ employee records with detailed workforce metrics</p>
+                        <p><strong>Outcomes:</strong> Attrition root cause identification, departmental trend
+                            analysis, and compensation benchmarking</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/hr-analytics-dashboard" target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blinkit Sales Dashboard -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="h-48 bg-gradient-to-br from-yellow-600 to-yellow-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-shopping-cart text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        E-Commerce Sales Analytics
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        Power BI • Excel • Sales Analytics
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Monitor e-grocery platform sales performance metrics
+                            across multiple outlets</p>
+                        <p><strong>Implementation:</strong> Engineered multi-dimensional analytical dashboard
+                            tracking 100+ product categories with performance metrics</p>
+                        <p><strong>Outcomes:</strong> Top-performing product categories identified, outlet
+                            return-on-investment analysis, and seasonal trend forecasting</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/Blinkit-Grocery-Sales-Analysis" target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FIFA World Cup Analytics -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="h-48 bg-gradient-to-br from-green-600 to-green-800 p-6 flex items-center justify-center">
+                    <i class="fas fa-trophy text-6xl text-white opacity-20"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 flex items-center gap-2 mb-3">
+                        FIFA World Cup Analytics
+                    </h4>
+                    <p class="text-sm text-primary-red font-medium mb-3">
+                        Power BI • SQL • Sports Analytics
+                    </p>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <p><strong>Objective:</strong> Historical analysis of FIFA World Cup performance metrics
+                            and tournament data</p>
+                        <p><strong>Implementation:</strong> Created dynamic Power BI analytical platform
+                            integrating 75+ years of comprehensive tournament dataset</p>
+                        <p><strong>Outcomes:</strong> Team performance rankings, goal-scoring pattern analysis,
+                            and tournament win probability predictions</p>
+                    </div>
+                    <a href="https://github.com/ranjith-nayak/fifa-world-cup-powerbi-dashboard" target="_blank"
+                        class="text-primary-red font-medium hover:underline inline-flex items-center gap-2">
+                        View on GitHub <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
-      </div>
-    </section>
+        </div>
+        </section>
 
-    <!-- About -->
-    <section id="about" class="max-w-6xl mx-auto px-6 py-16">
-      <div class="grid md:grid-cols-3 gap-8 items-start">
-        <div class="md:col-span-2">
-          <h2 class="text-3xl font-bold mb-4">About Me</h2>
-          <p class="text-gray-300">I design & implement analytics solutions — from data modeling and ETL to interactive dashboards and predictive models. I focus on measurable impact: reducing stockouts, improving retention, and enabling faster decisions through visual analytics.</p>
 
-          <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <li class="bg-card-bg-dark p-4 rounded-lg">SQL • Data Modeling</li>
-            <li class="bg-card-bg-dark p-4 rounded-lg">Python • Pandas • Scikit-learn</li>
-            <li class="bg-card-bg-dark p-4 rounded-lg">Power BI • DAX • Dashboarding</li>
-            <li class="bg-card-bg-dark p-4 rounded-lg">Forecasting • Time series</li>
-          </ul>
+        <!-- 6. Certifications Section -->
+        <section id="certifications" class="hero-bg py-20 md:py-32 text-text-light">
+
+            <div class="container mx-auto px-6 md:px-12">
+
+                <!-- Heading -->
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Professional Credentials
+                    </p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                        Verified <span class="text-primary-red">Certifications</span>
+                    </h2>
+                    <p class="text-text-light/50 mt-4 text-sm">Click any certificate to view details</p>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- NPTEL -->
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/assests/NPTEL.jpeg')"
+                        class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
+                        <img src="assests/NPTEL.jpeg" class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=NPTEL+Certificate';">
+                        <h4 class="text-xl font-semibold text-primary-red">The Joy of Computing Using Python</h4>
+                        <p class="text-sm text-text-light/75">National Programme on Technology Enhanced Learning (NPTEL)
+                        </p>
+                    </div>
+
+                    <!-- META -->
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/assests/CourseraMETA1.jpeg')"
+                        class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
+                        <img src="assests/CourseraMETA1.jpeg"
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=META+Certificate';">
+                        <h4 class="text-xl font-semibold text-primary-red">Introduction to Data Analytics</h4>
+                        <p class="text-sm text-text-light/75">Meta Professional Certificate via Coursera</p>
+                    </div>
+
+                    <!-- GOOGLE -->
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/assests/CourseraGOOGLE1.jpeg')"
+                        class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
+                        <img src="assests/CourseraGOOGLE1.jpeg"
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=GOOGLE+Certificate';">
+                        <h4 class="text-xl font-semibold text-primary-red">Foundations: Data, Data, Everywhere</h4>
+                        <p class="text-sm text-text-light/75">Google Data Analytics Professional Certificate</p>
+                    </div>
+
+                    <!-- IBM -->
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/assests/CourseraIBM1.jpeg')"
+                        class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
+                        <img src="assests/CourseraIBM1.jpeg" class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=IBM+Certificate';">
+                        <h4 class="text-xl font-semibold text-primary-red">Introduction to Data Analytics</h4>
+                        <p class="text-sm text-text-light/75">IBM Professional Certificate via Coursera</p>
+                    </div>
+
+                    <!-- MICROSOFT -->
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/assests/CertificateOfCompletion_CareerEssentialsinDataAnalysisbyMicrosoftandLinkedIn.jpeg')"
+                        class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
+                        <img src="assests/CertificateOfCompletion_CareerEssentialsinDataAnalysisbyMicrosoftandLinkedIn.jpeg"
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=MICROSOFT+Certificate';">
+                        <h4 class="text-xl font-semibold text-primary-red">Career Essentials in Data Analysis</h4>
+                        <p class="text-sm text-text-light/75">Microsoft & LinkedIn Learning</p>
+                    </div>
+
+                    <!-- IBM PYTHON -->
+                    <div onclick="openPreview('https://raw.githubusercontent.com/ranjith-nayak/Portfolio/main/assests/IBMDesign20251223-33-th7huk.jpeg')"
+                        class="bg-card-bg-dark p-6 rounded-xl shadow-xl card-hover cursor-pointer hover:border-primary-red/50 border">
+                        <img src="assests/IBMDesign20251223-33-th7huk.jpeg"
+                            class="w-full h-48 object-cover rounded-lg mb-4 opacity-80"
+                            onerror="this.src='https://placehold.co/600x400/666666/ffffff?text=IBM+PYTHON+Certificate';">
+                        <h4 class="text-xl font-semibold text-primary-red">Data Analysis Using Python</h4>
+                        <p class="text-sm text-text-light/75">IBM Professional Certificate via Coursera</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MODAL -->
+        <div id="certModal" class="fixed inset-0 hidden bg-black/95 z-[100] flex items-center justify-center p-4">
+            <div class="relative w-full max-w-5xl">
+
+                <button onclick="closePreview()" class="absolute -top-10 right-0 text-white text-xl">✕</button>
+
+                <img id="modalImg" class="hidden max-h-[85vh] mx-auto rounded-lg">
+                <iframe id="modalFrame" class="hidden w-full h-[85vh] rounded-lg"></iframe>
+
+            </div>
         </div>
 
-        <aside class="p-4 bg-card-bg-dark rounded-lg"> 
-          <h3 class="font-semibold">Quick Contact</h3>
-          <p class="text-sm text-gray-400">24ranjith2003@gmail.com</p>
-          <a href="assets/Ranjith A R resume.pdf" download class="mt-4 inline-block bg-primary-red text-white px-3 py-2 rounded">Download CV</a>
-        </aside>
-      </div>
-    </section>
+        <script>
+            function openPreview(file) {
+                const modal = document.getElementById('certModal');
+                const img = document.getElementById('modalImg');
+                const frame = document.getElementById('modalFrame');
 
-    <!-- Projects with filter -->
-    <section id="projects" class="max-w-6xl mx-auto px-6 py-16">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold">Featured Projects</h2>
-        <div>
-          <label for="filter" class="sr-only">Filter projects</label>
-          <select id="filter" class="bg-card-bg-dark rounded p-2 text-sm">
-            <option value="all">All</option>
-            <option value="analytics">Analytics</option>
-            <option value="forecasting">Forecasting</option>
-            <option value="ml">Machine Learning</option>
-            <option value="viz">Visualization</option>
-          </select>
-        </div>
-      </div>
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
 
-      <div id="project-grid" class="grid md:grid-cols-3 gap-6">
+                if (file.endsWith('.pdf')) {
+                    frame.src = file;
+                    frame.classList.remove('hidden');
+                    img.classList.add('hidden');
+                } else {
+                    img.src = file;
+                    img.classList.remove('hidden');
+                    frame.classList.add('hidden');
+                }
+            }
 
-        <!-- Project card example -->
-        <article class="card bg-white/5 p-4 rounded-lg hover:shadow-lg transition-transform" data-tags="analytics viz" tabindex="0">
-          <img src="/assets/projects/supply-preview.jpg" alt="SupplyScope preview" class="w-full h-40 object-cover rounded-md mb-3" loading="lazy">
-          <h3 class="font-semibold">SUPPLYSCOPE</h3>
-          <p class="text-sm text-gray-400">Inventory optimization & supplier analytics — Power BI & forecasting</p>
-          <div class="mt-3 flex gap-2">
-            <button class="open-project inline-flex items-center gap-2 text-sm bg-primary-red text-white px-3 py-1 rounded" data-title="SUPPLYSCOPE" data-img="/assets/projects/supply-preview.jpg" data-desc="Supply chain intelligence platform with forecasting and KPIs" data-link="https://github.com/ranjith-nayak/SUPPLYSCOPE-Supply-Chain-Intelligence">Details</button>
-            <a href="https://github.com/ranjith-nayak/SUPPLYSCOPE-Supply-Chain-Intelligence" target="_blank" rel="noopener noreferrer" class="text-sm px-3 py-1 border rounded">Repo</a>
-          </div>
-        </article>
+            function closePreview() {
+                const modal = document.getElementById('certModal');
+                const img = document.getElementById('modalImg');
+                const frame = document.getElementById('modalFrame');
 
-        <!-- Repeat for other projects (shortened for brevity) -->
-        <article class="card bg-white/5 p-4 rounded-lg" data-tags="analytics ml" tabindex="0">
-          <img src="/assets/projects/churn-preview.jpg" alt="Churn preview" class="w-full h-40 object-cover rounded-md mb-3" loading="lazy">
-          <h3 class="font-semibold">Customer Churn Prediction</h3>
-          <p class="text-sm text-gray-400">ML model to identify at-risk customers</p>
-          <div class="mt-3 flex gap-2">
-            <button class="open-project inline-flex items-center gap-2 text-sm bg-primary-red text-white px-3 py-1 rounded" data-title="Churn Prediction" data-img="/assets/projects/churn-preview.jpg" data-desc="Classification model and retention strategies" data-link="https://github.com/ranjith-nayak/customer-churn-prediction">Details</button>
-            <a href="https://github.com/ranjith-nayak/customer-churn-prediction" target="_blank" rel="noopener noreferrer" class="text-sm px-3 py-1 border rounded">Repo</a>
-          </div>
-        </article>
+                modal.classList.add('hidden');
+                img.src = "";
+                frame.src = "";
+                document.body.style.overflow = 'auto';
+            }
+        </script>
 
-        <article class="card bg-white/5 p-4 rounded-lg" data-tags="analytics viz" tabindex="0">
-          <img src="/assets/projects/bank-preview.jpg" alt="Bank analytics preview" class="w-full h-40 object-cover rounded-md mb-3" loading="lazy">
-          <h3 class="font-semibold">Bank Analytics Dashboard</h3>
-          <p class="text-sm text-gray-400">Customer segmentation & financial KPIs</p>
-          <div class="mt-3 flex gap-2">
-            <button class="open-project inline-flex items-center gap-2 text-sm bg-primary-red text-white px-3 py-1 rounded" data-title="Bank Analytics" data-img="/assets/projects/bank-preview.jpg" data-desc="Segmentation and CLTV analysis" data-link="https://github.com/ranjith-nayak/bank_analytics">Details</button>
-            <a href="https://github.com/ranjith-nayak/bank_analytics" target="_blank" rel="noopener noreferrer" class="text-sm px-3 py-1 border rounded">Repo</a>
-          </div>
-        </article>
+        <!-- 7. Achievements Section -->
+        <section id="achievements" class="bg-light-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Professional Track
+                        Record</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2 text-gray-900">Key <span
+                            class="text-primary-red">Achievements</span></h2>
+                </div>
 
-      </div>
-    </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Achievement 1 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-chart-pie text-4xl text-primary-red"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">7+ Analytics Projects Delivered</h4>
+                        <p class="text-gray-600">Successfully executed comprehensive end-to-end analytics solutions from
+                            data acquisition through interactive dashboard deployment, directly contributing to
+                            strategic business decisions.</p>
+                    </div>
 
-    <!-- Project Modal -->
-    <div id="projectModal" class="fixed inset-0 hidden z-50 items-center justify-center bg-black/70 p-4" role="dialog" aria-modal="true">
-      <div class="bg-card-bg-dark rounded-lg max-w-3xl w-full p-6">
-        <button id="closeModal" class="float-right text-gray-300" aria-label="Close">✕</button>
-        <h3 id="modalTitle" class="text-xl font-bold mb-2"></h3>
-        <img id="modalImg" src="" alt="" class="w-full h-60 object-cover rounded mb-3" />
-        <p id="modalDesc" class="text-gray-300 mb-3"></p>
-        <a id="modalRepo" href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary-red text-white px-3 py-2 rounded">Open Repository</a>
-      </div>
-    </div>
+                    <!-- Achievement 2 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-database text-4xl text-primary-red"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">10+ Analytical Dashboards Created</h4>
+                        <p class="text-gray-600">Designed and implemented interactive Power BI and Tableau dashboards
+                            featuring complex DAX formulas, advanced data modeling, and real-time business intelligence
+                            visualization capabilities.</p>
+                    </div>
 
-    <!-- Certifications (grid) -->
-    <section id="certifications" class="max-w-6xl mx-auto px-6 py-16">
-      <h2 class="text-2xl font-bold mb-6">Certifications</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <figure class="bg-white/5 p-4 rounded-lg"> <img src="/assets/NPTEL.jpeg" alt="NPTEL" class="w-full h-40 object-cover rounded mb-3" loading="lazy"><figcaption class="text-sm text-gray-300">The Joy of Computing Using Python — NPTEL</figcaption></figure>
-        <figure class="bg-white/5 p-4 rounded-lg"> <img src="/assets/CourseraMETA1.jpeg" alt="Meta" class="w-full h-40 object-cover rounded mb-3" loading="lazy"><figcaption class="text-sm text-gray-300">Meta: Data Analytics</figcaption></figure>
-        <figure class="bg-white/5 p-4 rounded-lg"> <img src="/assets/CourseraGOOGLE1.jpeg" alt="Google" class="w-full h-40 object-cover rounded mb-3" loading="lazy"><figcaption class="text-sm text-gray-300">Google Data Analytics</figcaption></figure>
-      </div>
-    </section>
+                    <!-- Achievement 3 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-certificate text-4xl text-primary-red"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">6 Professional Certifications</h4>
+                        <p class="text-gray-600">Completed industry-recognized certification programs from leading
+                            technology providers including Google, Meta, IBM, Microsoft, and NPTEL in data analytics and
+                            Python programming.</p>
+                    </div>
 
-    <!-- Contact -->
-    <section id="contactme" class="max-w-6xl mx-auto px-6 py-16">
-      <div class="bg-card-bg-dark p-8 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Get in touch</h2>
-        <form action="https://formspree.io/f/manpbbkq" method="POST" class="grid md:grid-cols-2 gap-4">
-          <input name="name" required placeholder="Full name" class="p-3 rounded bg-black/20" />
-          <input name="email" type="email" required placeholder="Email" class="p-3 rounded bg-black/20" />
-          <input name="subject" placeholder="Subject" class="p-3 rounded bg-black/20" />
-          <textarea name="message" rows="4" placeholder="Message" class="p-3 rounded bg-black/20 md:col-span-2"></textarea>
-          <div class="md:col-span-2"><button type="submit" class="bg-primary-red px-4 py-2 rounded text-white">Send Message</button></div>
-        </form>
-      </div>
-    </section>
+                    <!-- Achievement 4 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-code-branch text-4xl text-primary-red"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">GitHub Portfolio Showcase</h4>
+                        <p class="text-gray-600">Maintained comprehensive open-source portfolio repository demonstrating
+                            advanced SQL query development, Python scripting, Power BI data models, and complete
+                            end-to-end analytics solutions.</p>
+                    </div>
 
-    <footer class="max-w-6xl mx-auto px-6 py-8 text-sm text-gray-400">© 2026 Ranjith A R — Built with care • <a href="#contactme" class="underline">Contact</a></footer>
+                    <!-- Achievement 5 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="mb-4">
+                            <i class="fas fa-brain text-4xl text-primary-red"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">Technical Excellence</h4>
+                        <p class="text-gray-600">Demonstrated advanced proficiency in SQL database querying, Python data
+                            manipulation frameworks, Power BI business intelligence, Excel advanced functions, and
+                            comprehensive statistical analysis techniques.</p>
+                    </div>
 
-  </main>
+                    
+                </div>
+            </div>
+        </section>
 
-  <script>
-    // small blob animations
-    const style = document.createElement('style');
-    style.innerHTML = `@keyframes move1{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(20px) translateX(20px)}100%{transform:translateY(0) translateX(0)}}@keyframes move2{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-18px) translateX(-8px)}100%{transform:translateY(0) translateX(0)}}`;
-    document.head.appendChild(style);
+        <!-- 8. Contact Section -->
+        <section id="contactme" class="hero-bg py-20 md:py-32 text-text-light">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <p class="text-primary-red uppercase tracking-widest text-sm font-semibold">Professional Inquiry</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                        Contact <span class="text-primary-red">Information</span>
+                    </h2>
+                </div>
 
-    // Mobile toggle
-    document.getElementById('mobile-toggle').addEventListener('click', () => {
-      const nav = document.querySelector('nav[aria-label]');
-      if (nav) nav.classList.toggle('hidden');
-    });
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-3 bg-card-bg-dark p-8 rounded-xl shadow-xl max-w-4xl mx-auto">
+                        <h3 class="text-2xl font-bold mb-6">Send Professional Message</h3>
 
-    // Project filter
-    const filterEl = document.getElementById('filter');
-    const grid = document.getElementById('project-grid');
-    filterEl.addEventListener('change', (e) => {
-      const val = e.target.value;
-      const cards = grid.querySelectorAll('[data-tags]');
-      cards.forEach(c => {
-        const tags = c.dataset.tags.split(' ');
-        if (val === 'all' || tags.includes(val)) c.style.display = '';
-        else c.style.display = 'none';
-      });
-    });
+                        <form action="https://formspree.io/f/manpbbkq" method="POST" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <input type="text" name="name" placeholder="Full Name"
+                                    class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-primary-red"
+                                    required>
 
-    // Project modal
-    const modal = document.getElementById('projectModal');
-    const openBtns = document.querySelectorAll('.open-project');
-    const closeBtn = document.getElementById('closeModal');
-    openBtns.forEach(b => b.addEventListener('click', () => {
-      document.getElementById('modalTitle').textContent = b.dataset.title;
-      document.getElementById('modalImg').src = b.dataset.img;
-      document.getElementById('modalDesc').textContent = b.dataset.desc;
-      document.getElementById('modalRepo').href = b.dataset.link;
-      modal.classList.remove('hidden');
-    }));
-    closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.add('hidden'); });
+                                <input type="email" name="email" placeholder="Email Address"
+                                    class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-primary-red"
+                                    required>
+                            </div>
 
-    // Intersection reveal for cards
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('opacity-100','translate-y-0');
-      });
-    }, {threshold: 0.1});
-    document.querySelectorAll('.card').forEach(c => { c.classList.add('opacity-0','translate-y-6','transition-all','duration-700'); observer.observe(c); });
-  </script>
+                            <input type="text" name="subject" placeholder="Message Subject"
+                                class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-primary-red"
+                                required>
+
+                            <textarea name="message" placeholder="Professional Message" rows="5"
+                                class="w-full p-4 rounded-lg bg-gray-700/50 border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-primary-red"
+                                required></textarea>
+
+                            <button type="submit"
+                                class="bg-primary-red text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+
+                        <p class="text-sm text-gray-400 mt-4">Your message will be received and reviewed promptly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Footer -->
+        <footer class="hero-bg text-text-light p-6 text-center text-sm">
+            <p>&copy; 2026 Ranjith A R. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        const greetings = [
+            { text: "HELLO!" },       // English
+            { text: "ನಮಸ್ಕಾರ!" },    // Kannada
+            { text: "¡HOLA!" },       // Spanish
+            { text: "BONJOUR!" },     // French
+            { text: "HALLO!" },       // German
+            { text: "नमस्ते!" },        // Hindi
+            { text: "こんにちは!" },   // Japanese
+            { text: "你好!" },         // Chinese (Mandarin)
+            { text: "Ciao!" },         // Italian
+            { text: "Привет!" },       // Russian
+            { text: "안녕하세요!" },   // Korean
+            { text: "مرحبا!" },        // Arabic
+            { text: "Olá!" },        // Portuguese
+            { text: "Hoi!" },        // Dutch
+            { text: "Hej!" },        // Swedish
+            { text: "Merhaba!" },    // Turkish
+            { text: "Selam!" },      // Turkish (alternative)
+            { text: "Sawubona!" },   // Zulu
+            { text: "Habari!" },     // Swahili
+            { text: "Γειά σου!" },   // Greek
+            { text: "שלום!" },       // Hebrew
+            { text: "Sawasdee!" },   // Thai
+        ];
+
+        let currentGreetingIndex = 0;
+        const GREETING_DURATION_MS = 1500;
+        const FADE_DURATION_MS = 500;
+
+        const greetingEl = document.getElementById('greeting');
+
+        function fadeOutGreeting() {
+            greetingEl.classList.remove('opacity-100');
+            greetingEl.classList.add('opacity-0');
+        }
+
+        function showGreeting(index) {
+            if (!greetingEl) return;
+            const currentGreeting = greetings[index];
+
+            greetingEl.textContent = currentGreeting.text;
+
+            setTimeout(() => {
+                greetingEl.classList.remove('opacity-0');
+                greetingEl.classList.add('opacity-100');
+
+                setTimeout(() => {
+                    fadeOutGreeting();
+                }, GREETING_DURATION_MS);
+            }, 50);
+        }
+
+        function nextGreeting() {
+            if (!greetingEl) return;
+            setTimeout(() => {
+                currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
+                showGreeting(currentGreetingIndex);
+
+                setTimeout(nextGreeting, GREETING_DURATION_MS + FADE_DURATION_MS + 50);
+            }, FADE_DURATION_MS);
+        }
+
+        const professions = ["Data Analyst.", "Business Analyst.", "Analytics Engineer.", "Data Engineer."];
+        const typingTextElement = document.getElementById('typing-text');
+
+        let professionIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 150;
+
+        function type() {
+            if (!typingTextElement) return;
+
+            const currentText = professions[professionIndex];
+            let display = currentText.substring(0, charIndex);
+
+            typingTextElement.textContent = display;
+
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = 100;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                professionIndex = (professionIndex + 1) % professions.length;
+                typingSpeed = 150;
+            }
+
+            setTimeout(type, typingSpeed);
+        }
+
+        window.addEventListener('load', () => {
+            if (greetingEl) {
+                showGreeting(0);
+                setTimeout(nextGreeting, GREETING_DURATION_MS + FADE_DURATION_MS + 50);
+            }
+
+            if (typingTextElement) {
+                type();
+            }
+        });
+    </script>
 
 </body>
 
