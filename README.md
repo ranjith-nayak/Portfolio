@@ -8,7 +8,7 @@ It highlights my ability to transform raw data into meaningful insights using mo
 
 ## 🌍 Live Portfolio
 
-👉 [View Portfolio](ranjith-a-r.vercel.app)
+👉 [View Portfolio](https://ranjith-a-r.vercel.app)
 
 ---
 
